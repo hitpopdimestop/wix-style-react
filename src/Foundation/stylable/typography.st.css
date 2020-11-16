@@ -1,4 +1,4 @@
-@st-global-custom-property --wsr-font-family, --wsr-font-weight-regular, --wsr-font-weight-bold;
+@st-global-custom-property --wsr-font-family, --wsr-font-weight-regular, --wsr-font-weight-medium , --wsr-font-weight-bold;
 
 /* Fonts */
 :vars {
@@ -46,6 +46,10 @@
   -st-mixin: weight-mixin(weight var(--wsr-font-weight-regular, 400));
 }
 
+.medium {
+  -st-mixin: weight-mixin(weight var(--wsr-font-weight-medium, 400));
+}
+
 .bold {
   -st-mixin: weight-mixin(weight var(--wsr-font-weight-bold, 400));
 }
@@ -57,6 +61,10 @@
 
 .text-tiny-normal {
   -st-mixin: tiny, normal, font-mixin(family value(helveticanueu65));
+}
+
+.text-tiny-medium {
+  -st-mixin: tiny, medium, font-mixin(family value());
 }
 
 .text-tiny-bold {
@@ -71,6 +79,10 @@
   -st-mixin: small, normal, font-mixin(family value(helveticanueu55));
 }
 
+.text-small-medium {
+  -st-mixin: small, medium, font-mixin(family value());
+}
+
 .text-small-bold {
   -st-mixin: small, bold, font-mixin(family value(helveticanueu65));
 }
@@ -81,6 +93,10 @@
 
 .text-medium-normal {
   -st-mixin: medium, normal, font-mixin(family value(helveticanueu55));
+}
+
+.text-medium-normal {
+  -st-mixin: medium, medium, font-mixin(family value());
 }
 
 .text-medium-bold {

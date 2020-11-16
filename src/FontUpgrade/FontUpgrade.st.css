@@ -1,7 +1,8 @@
-@st-global-custom-property --wsr-font-family, --wsr-font-weight-regular, --wsr-font-weight-bold, --wix-font-stack, --wix-font-weight-regular, --wix-font-weight-bold;
+@st-global-custom-property --wsr-font-family, --wsr-font-weight-regular, --wsr-font-weight-medium , --wsr-font-weight-bold, --wix-font-stack, --wix-font-weight-regular, --wix-font-weight-bold;
 
 .root {
   --wsr-font-family: var(--wix-font-stack);
   --wsr-font-weight-regular: var(--wix-font-weight-regular);
+  --wsr-font-weight-medium: var(--wsr-font-weight-medium);
   --wsr-font-weight-bold: var(--wix-font-weight-bold);
 }
