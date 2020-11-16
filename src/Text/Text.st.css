@@ -1,8 +1,8 @@
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
-  -st-named: text-tiny-thin, text-tiny-normal, text-tiny-bold, text-small-thin,
-  text-small-normal, text-small-bold, text-medium-thin, text-medium-normal,
-  text-medium-bold;
+  -st-named: text-tiny-thin, text-tiny-normal, text-tiny-medium, text-tiny-bold, text-small-thin,
+  text-small-normal, text-small-medium, text-small-bold, text-medium-thin, text-medium-normal,
+  text-medium-medium, text-medium-bold;
 }
 
 :import {
@@ -51,6 +51,17 @@
 }
 .root:weight(normal):size(medium) {
   -st-mixin: text-medium-normal;
+}
+
+/* Medium */
+.root:weight(medium):size(tiny) {
+  -st-mixin: text-tiny-medium;
+}
+.root:weight(medium):size(small) {
+  -st-mixin: text-small-medium;
+}
+.root:weight(medium):size(medium) {
+  -st-mixin: text-medium-medium;
 }
 
 /* Bold */

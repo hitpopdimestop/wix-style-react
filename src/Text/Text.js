@@ -70,7 +70,7 @@ TextWithEllipsis.propTypes = {
   light: PropTypes.bool,
 
   /** font weight of the text */
-  weight: PropTypes.oneOf(['thin', 'normal', 'bold']),
+  weight: PropTypes.oneOf(['thin', 'normal', 'medium', 'bold']),
 
   /*
    * Ellipsis props
