@@ -16,6 +16,5 @@ export const SKINS = {
 export const WEIGHTS = {
   thin: 'thin',
   normal: 'normal',
-  medium: 'medium',
   bold: 'bold',
 };
