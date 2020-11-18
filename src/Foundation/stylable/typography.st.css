@@ -43,8 +43,8 @@
 }
 
 .normal {
-   -st-mixin: weight-mixin(weight var(--wsr-font-weight-medium, 400));
- }
+  -st-mixin: weight-mixin(weight var(--wsr-font-weight-medium, 400));
+}
 
 .bold {
   -st-mixin: weight-mixin(weight var(--wsr-font-weight-bold, 400));
