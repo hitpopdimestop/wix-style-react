@@ -52,6 +52,7 @@ export interface TooltipCommonProps {
   placement?: TooltipProps['placement'];
   textAlign?: TooltipProps['textAlign'];
   zIndex?: TooltipProps['zIndex'];
+  size?: TooltipProps['size'];
 }
 
 export type StatusIndications = 'error' | 'warning' | 'loading';

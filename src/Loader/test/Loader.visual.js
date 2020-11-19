@@ -12,9 +12,21 @@ const Story = props => (
   </Box>
 );
 
-const options = {
-  props: ['size', 'status', { name: 'text', values: ['Wubba Lubba Dub Dub'] }],
-  skipUndefinedValue: true,
+export const runTests = (
+  { themeName, testWithTheme } = { testWithTheme: i => i },
+) => {
+  const options = {
+    testWithTheme,
+    themeName,
+    props: [
+      'size',
+      'status',
+      { name: 'text', values: ['Wubba Lubba Dub Dub'] },
+    ],
+    skipUndefinedValue: true,
+  };
+
+  storyOfAllPermutations(Story, Loader, options);
 };
 
-storyOfAllPermutations(Story, Loader, options);
+runTests();

@@ -19,33 +19,6 @@ const WrappedInput = props => {
   );
 };
 
-storiesOf('Input', module).add('basic props', () => {
-  return (
-    <div>
-      <WrappedInput />
-      <WrappedInput disabled />
-      <WrappedInput readOnly />
-      <WrappedInput forceHover />
-      <WrappedInput forceFocus />
-      <WrappedInput placeholder="I'm a placeholder" value={null} />
-    </div>
-  );
-});
-
-storiesOf('Input', module).add('status indicator', () => {
-  return (
-    <div>
-      {['error', 'warning', 'loading'].map(status => (
-        <div>
-          <WrappedInput key={status} status={status} />
-          <WrappedInput key={status} status={status} forceHover />
-          <WrappedInput key={status} status={status} forceFocus />
-        </div>
-      ))}
-    </div>
-  );
-});
-
 const WrappedInputAffix = props => (
   <WrappedInput
     {...props}
@@ -76,24 +49,57 @@ const WrappedInputIconAffix = props => (
   />
 );
 
-storiesOf('Input', module).add('prefix/suffix', () => {
-  return (
-    <div>
-      <WrappedInputAffix />
-      <WrappedInputAffix roundInput />
-      <WrappedInputIconAffix />
-      <WrappedInputIconAffix roundInput />
-    </div>
-  );
-});
+export const runTests = (
+  { themeName, testWithTheme } = { testWithTheme: i => i },
+) => {
+  const storiesTitle = `${themeName ? `${themeName}|` : ''}Input`;
 
-storiesOf('Input', module).add('rtl', () => {
-  return (
-    <div>
-      <WrappedInputAffix rtl />
-      <WrappedInputAffix rtl roundInput />
-      <WrappedInputIconAffix rtl />
-      <WrappedInputIconAffix rtl roundInput />
-    </div>
-  );
-});
+  storiesOf(storiesTitle, module).add('basic props', () => {
+    return testWithTheme(
+      <div>
+        <WrappedInput />
+        <WrappedInput disabled />
+        <WrappedInput readOnly />
+        <WrappedInput forceHover />
+        <WrappedInput forceFocus />
+        <WrappedInput placeholder="I'm a placeholder" value={null} />
+      </div>,
+    );
+  });
+
+  storiesOf(storiesTitle, module).add('status indicator', () => {
+    return testWithTheme(
+      <div>
+        {['error', 'warning', 'loading'].map(status => (
+          <div>
+            <WrappedInput key={status} status={status} />
+            <WrappedInput key={status} status={status} forceHover />
+            <WrappedInput key={status} status={status} forceFocus />
+          </div>
+        ))}
+      </div>,
+    );
+  });
+
+  storiesOf(storiesTitle, module).add('prefix/suffix', () => {
+    return testWithTheme(
+      <div>
+        <WrappedInputAffix />
+        <WrappedInputAffix roundInput />
+        <WrappedInputIconAffix />
+        <WrappedInputIconAffix roundInput />
+      </div>,
+    );
+  });
+
+  storiesOf(storiesTitle, module).add('rtl', () => {
+    return testWithTheme(
+      <div>
+        <WrappedInputAffix rtl />
+        <WrappedInputAffix rtl roundInput />
+        <WrappedInputIconAffix rtl />
+        <WrappedInputIconAffix rtl roundInput />
+      </div>,
+    );
+  });
+};

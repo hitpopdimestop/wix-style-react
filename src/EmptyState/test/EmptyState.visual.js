@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
+import { visualize, snap, story } from 'storybook-snapper';
 import EmptyState from '../EmptyState';
 import ImagePlaceholder from '../../../stories/utils/ImagePlaceholder';
 import { RTLWrapper } from '../../../stories/utils/RTLWrapper';
@@ -143,24 +143,33 @@ const rtlTests = [
   },
 ];
 
-tests.forEach(({ describe, its }) => {
-  its.forEach(({ it, props }) => {
-    storiesOf(
-      `${EmptyState.displayName}${describe ? '/' + describe : ''}`,
-      module,
-    ).add(it, () => <EmptyState {...commonProps} {...props} />);
-  });
-});
+export const runTests = (
+  { themeName, testWithTheme } = { testWithTheme: i => i },
+) => {
+  visualize(`${themeName ? `${themeName}|` : ''}EmptyState`, () => {
+    tests.forEach(({ describe, its }) => {
+      its.forEach(({ it, props }) => {
+        story(describe, () => {
+          snap(it, testWithTheme(<EmptyState {...commonProps} {...props} />));
+        });
+      });
+    });
 
-rtlTests.forEach(({ describe, its }) => {
-  its.forEach(({ it, props }) => {
-    storiesOf(
-      `${EmptyState.displayName}${describe ? '/' + describe : ''}`,
-      module,
-    ).add(it, () => (
-      <RTLWrapper rtl>
-        <EmptyState {...commonProps} {...props} />
-      </RTLWrapper>
-    ));
+    rtlTests.forEach(({ describe, its }) => {
+      its.forEach(({ it, props }) => {
+        story(describe, () => {
+          snap(
+            it,
+            testWithTheme(
+              <RTLWrapper rtl>
+                <EmptyState {...commonProps} {...props} />
+              </RTLWrapper>,
+            ),
+          );
+        });
+      });
+    });
   });
-});
+};
+
+runTests();

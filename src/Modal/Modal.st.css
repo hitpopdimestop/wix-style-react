@@ -8,48 +8,42 @@
   -st-named: ease-1, ease-2;
 }
 
-.modal {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.modal div {
-  box-sizing: border-box;
-}
-
-.portal {
+/* Portal element */
+.root {
   -st-states: scrollable;
 }
 
-.portal :global(.ReactModal__Content) {
+.root :global(.ReactModal__Content) {
   opacity: 0.66;
   transform: scale(0.93);
 }
 
-.portal :global(.ReactModal__Content--after-open) {
+.root :global(.ReactModal__Content--after-open) {
   opacity: 1;
   transform: scale(1);
   transition: opacity 0.35s value(ease-1), transform 0.35s value(ease-1);
 }
 
-.portal :global(.ReactModal__Content--before-close) {
+.root :global(.ReactModal__Content--before-close) {
   pointer-events: none;
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.3s value(ease-1), transform 0.3s value(ease-1);
 }
 
-.portal :global(.ReactModal__Overlay) {
+.root :global(.ReactModal__Overlay) {
   background: transparent;
   opacity: 1;
 }
 
-.portal :global(.ReactModal__Overlay--after-open) {
+@custom-selector :--modal-overlay :global(.ReactModal__Overlay--after-open);
+
+.root :--modal-overlay {
   background: value(D10-66);
   transition: background 0.2s value(ease-1);
 }
 
-.portal :global(.ReactModal__Overlay--before-close) {
+.root :global(.ReactModal__Overlay--before-close) {
   background: transparent;
   transition: background 0.15s value(ease-2);
 }
@@ -75,6 +69,16 @@
   color: white;
 }
 
-.portal:not(:scrollable) :global(.ReactModal__Overlay) {
+.root:not(:scrollable) :global(.ReactModal__Overlay) {
   overflow: hidden;
+}
+
+/* Inner modal element */
+.modal {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.modal div {
+  box-sizing: border-box;
 }

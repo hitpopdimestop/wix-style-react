@@ -57,21 +57,32 @@ const EmptyState = ({
           {theme === 'section' ? (
             <FontUpgradeContext.Consumer>
               {({ active }) => (
-                <Text weight={active ? 'bold' : 'normal'}>{title}</Text>
+                <Text
+                  weight={active ? 'bold' : 'normal'}
+                  className={classes.sectionTitle}
+                >
+                  {title}
+                </Text>
               )}
             </FontUpgradeContext.Consumer>
           ) : (
-            <Heading appearance="H3">{title}</Heading>
+            <Heading className={classes.title} appearance="H3">
+              {title}
+            </Heading>
           )}
         </div>
       )}
 
-      <div
-        className={classes.subtitleContainer}
-        data-hook="empty-state-subtitle-container"
-      >
-        <Text secondary>{subtitle}</Text>
-      </div>
+      {subtitle && (
+        <div
+          className={classes.subtitleContainer}
+          data-hook="empty-state-subtitle-container"
+        >
+          <Text className={classes.subtitle} secondary>
+            {subtitle}
+          </Text>
+        </div>
+      )}
 
       {children && (
         <div

@@ -16,7 +16,7 @@
 
   /* Primary */
   B05: #0F62E6;
-  B10: #116dff;
+  B10: #116DFF;
   B20: #418AFF;
   B30: #7CAFFF;
   B40: #C3DAFF;
@@ -31,8 +31,7 @@
   D80-70: calc_rgba(value(D80), 0.7);
 
   /* Success */
-  G20: #51B77B;
-
+  G20: #00A849;
   /* Destructive */
   R20: #F1695F;
 
@@ -51,4 +50,8 @@
   dividerColor: calc_rgba(value(D80), 0.1);
   darkScrollbarThumbColor: #717479;
   darkScrollbarThumbHoverColor: #b8b9bc;
+
+  /* Shadows */
+  S4: calc_rgba(value(D10), 0.2);
+  S5: calc_rgba(value(D10), 0.16);
 }

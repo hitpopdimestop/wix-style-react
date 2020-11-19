@@ -16,14 +16,23 @@ Types of changes:
 
 ## Next
 ### Added
+- `Themes | Business Dashboard` - added box-shadow theming [#6263](https://github.com/wix/wix-style-react/pull/6263)
+
+## 9.41.0 - 2020-11-19
+### Added
 - `<Card/>` - add withShadow prop [#6257](https://github.com/wix/wix-style-react/pull/6257)
+- `<Text />` - added tooltipProps as a new prop [#6261](https://github.com/wix/wix-style-react/pull/6261)
+- `Themes | Business Dashboard` - add Input theme [#6265](https://github.com/wix/wix-style-react/pull/6265)
+- `Themes | Business Dashboard` - add EmptyState theme [#6262](https://github.com/wix/wix-style-react/pull/6262)
+- `Themes | Business Dashboard` - add Loader theme [#6277](https://github.com/wix/wix-style-react/pull/6277)
 
 ### Changed
 - `<Modal/>` - migrate to stylable [#6266](https://github.com/wix/wix-style-react/pull/6266)
+- `<Image/>` - Add className prop [#6272](https://github.com/wix/wix-style-react/pull/6272)
 
 ### Fixed
 - `<GoogleAddressInput/>`- adding IDs to options recevied from client [#6258](https://github.com/wix/wix-style-react/pull/6258)
-
+- `<TableListItem/>` - fix width/align not working [#6271](https://github.com/wix/wix-style-react/pull/6271)
 
 ## 9.40.0 - 2020-11-17
 ### Added 

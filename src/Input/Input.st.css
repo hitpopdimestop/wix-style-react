@@ -15,6 +15,11 @@
   -st-named: text-small-normal, text-medium-normal;
 }
 
+:import {
+  -st-from: "../CloseButton/CloseButton.st.css";
+  -st-default: CloseButton;
+}
+
 .root {
   -st-states: size(enum(small, medium, large)), hasFocus,
               status(enum(error, warning)), forceHover, readOnly,
@@ -263,4 +268,8 @@
 /* Remove IE10+ automatically x button */
 .input::-ms-clear {
   display: none;
+}
+
+.clearButton {
+  -st-extends: CloseButton;
 }

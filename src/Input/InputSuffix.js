@@ -44,6 +44,7 @@ const InputSuffix = ({
             skin="standardFilled"
             size={clearButtonSize}
             onClick={onClear}
+            className={classes.clearButton}
           />
         </div>
       ),

@@ -15,6 +15,7 @@
 
 .root::progressBar {
   display: block;
+  position: relative;
 }
 
 .root::progressBar::backArc {

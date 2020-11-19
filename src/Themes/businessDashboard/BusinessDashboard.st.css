@@ -1,3 +1,10 @@
+@st-global-custom-property --wsr-shadow10, --wsr-shadow20, --wsr-shadow30, --wsr-shadow40;
+
+:import {
+  -st-from: "./foundations/colors.st.css";
+  -st-named: S4, S5;
+}
+
 /* Components */
 :import {
   -st-from: "../../Button/Button.st.css";
@@ -112,6 +119,31 @@
 :import {
   -st-from: "../../Badge/Badge.st.css";
   -st-default: Badge;
+}
+
+:import {
+  -st-from: "../../Loader/Loader.st.css";
+  -st-default: Loader;
+}
+
+:import {
+  -st-from: "../../Input/Input.st.css";
+  -st-default: Input;
+}
+
+:import {
+  -st-from: "../../Input/IconAffix/IconAffix.st.css";
+  -st-default: IconAffix;
+}
+
+:import {
+  -st-from: "../../EmptyState/EmptyState.st.css";
+  -st-default: EmptyState;
+}
+
+:import {
+  -st-from: "../../Modal/Modal.st.css";
+  -st-default: Modal;
 }
 
 /* Overrides */
@@ -230,6 +262,31 @@
   -st-default: BadgeOverrides;
 }
 
+:import {
+  -st-from: "./components/Loader.st.css";
+  -st-default: LoaderOverrides;
+}
+
+:import {
+  -st-from: "./components/Input/Input.st.css";
+  -st-default: InputOverrides;
+}
+
+:import {
+  -st-from: "./components/Input/IconAffix.st.css";
+  -st-default: IconAffixOverrides;
+}
+
+:import {
+  -st-from: "./components/EmptyState.st.css";
+  -st-default: EmptyStateOverrides;
+}
+
+:import {
+  -st-from: "./components/Modal.st.css";
+  -st-default: ModalOverrides;
+}
+
 @st-scope .root {
   Button {
     -st-mixin: ButtonOverrides();
@@ -297,6 +354,18 @@
   Badge {
     -st-mixin: BadgeOverrides();
   }
+  Loader {
+    -st-mixin: LoaderOverrides();
+  }
+  Input {
+    -st-mixin: InputOverrides();
+  }
+  IconAffix {
+    -st-mixin: IconAffixOverrides();
+  }
+  EmptyState {
+    -st-mixin: EmptyStateOverrides();
+  }
 }
 
 /* Portaled node support
@@ -313,5 +382,16 @@
 
   PopoverMenu.root {
     -st-mixin: PopoverMenuOverrides();
+  }
+
+  .root {
+    --wsr-shadow10: 0 0 8px 0 value(S5);
+    --wsr-shadow20: 0 2px 12px 0 value(S4);
+    --wsr-shadow30: 0 0 12px 0 value(S5);
+    --wsr-shadow40: 0 0 24px 0 value(S5);
+  }
+
+  Modal.root {
+    -st-mixin: ModalOverrides();
   }
 }

@@ -22,7 +22,7 @@
 }
 
 .root:size(small)::popoverContent {
-  padding: 7px 12px 9px 12px;
+  padding: 8px 12px;
   line-height: 16px;
 }
 

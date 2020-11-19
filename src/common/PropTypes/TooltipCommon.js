@@ -15,4 +15,5 @@ export const TooltipCommonProps = {
   placement: Tooltip.propTypes['placement'],
   textAlign: Tooltip.propTypes['textAlign'],
   zIndex: Tooltip.propTypes['zIndex'],
+  size: Tooltip.propTypes['size'],
 };

@@ -1,4 +1,9 @@
 :import {
+  -st-from: "../../../Foundation/stylable/shadows.st.css";
+  -st-named: shadow10;
+}
+
+:import {
   -st-from: "../../../DropdownLayout/DropdownLayout.st.css";
   -st-default: DropdownLayout;
 }
@@ -10,6 +15,10 @@
 
 .root {
   -st-extends: DropdownLayout;
+}
+
+.root:containerStyles::contentContainer {
+  box-shadow: value(shadow10);
 }
 
 .root::options::-webkit-scrollbar {
@@ -26,4 +35,3 @@
 .root::options::-webkit-scrollbar-thumb:active {
   background-color: value(D40);
 }
-

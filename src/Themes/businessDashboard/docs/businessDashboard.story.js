@@ -22,12 +22,17 @@ import * as iconButtons from './components/IconButton';
 import * as tooltips from './components/Tooltip';
 import * as card from './components/Card';
 import * as badge from './components/Badge';
+import * as loader from './components/Loader';
 import * as circularProgressBar from './components/CircularProgressBar';
 import * as linearProgressBar from './components/LinearProgressBar';
 import * as listItemSelect from './components/ListItemSelect';
 import * as sidebar from './components/Sidebar';
 import * as listItemActions from './components/ListItemAction';
 import * as popoverMenu from './components/PopoverMenu';
+import * as input from './components/Input';
+import * as search from './components/Search';
+import * as emptyState from './components/EmptyState';
+import * as modal from './components/Modal';
 import { Category } from '../../../../stories/storiesHierarchy';
 import Box from '../../../Box';
 import Text from '../../../Text';
@@ -136,6 +141,26 @@ import { theme } from 'wix-style-react/themes/businessDashboard';
           example({
             text: TextComponent('Badge'),
             source: badge.playground,
+          }),
+          example({
+            text: TextComponent('Loader'),
+            source: loader.playground,
+          }),
+          example({
+            text: TextComponent('Input'),
+            source: input.playground,
+          }),
+          example({
+            text: TextComponent('Search'),
+            source: search.playground,
+          }),
+          example({
+            text: TextComponent('EmptyState'),
+            source: emptyState.playground,
+          }),
+          example({
+            text: TextComponent('Modal'),
+            source: modal.playground,
           }),
         ],
       }),

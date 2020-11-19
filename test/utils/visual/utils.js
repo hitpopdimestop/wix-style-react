@@ -93,8 +93,15 @@ function getPropsPermutations(componentName, options) {
  */
 export const storyOfAllPermutations = (Story, Component, options = {}) => {
   const permutations = getPropsPermutations(Component.displayName, options);
-  const { storyName = 'Props Permutations', testWithTheme = i => i } = options;
-  storiesOf(Component.displayName, module).add(storyName, () =>
+  const {
+    storyName = 'Props Permutations',
+    testWithTheme = i => i,
+    themeName,
+  } = options;
+  storiesOf(
+    `${themeName ? `${themeName}|` : ''}${Component.displayName}`,
+    module,
+  ).add(storyName, () =>
     testWithTheme(
       <Container>
         {permutations.map((props, key) => (

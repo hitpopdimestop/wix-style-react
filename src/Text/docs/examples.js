@@ -99,14 +99,20 @@ export const ellipsisNoTooltip = `
     <Text ellipsis>I show tooltip on hover</Text>
   </Box>
   <Box width="120px">
-    <Text ellipsis showTooltip={false}>I don't show anything on hover</Text>
+    <Text ellipsis tooltipProps={{ disabled: true }}>I don't show anything on hover</Text>
   </Box>
 </Layout>
 `;
 
+export const smallTooltip = `
+<Box width="120px">
+  <Text ellipsis size="tiny" tooltipProps={{ size:'small' }}>I am tiny and I show small tooltip</Text>
+</Box>
+`;
+
 export const maxwidth = `
 <Box width="120px">
-  <Text ellipsis maxWidth="360px">Long text doesn't fit into 120px</Text>
+  <Text ellipsis tooltipProps={{ maxWidth: '360px' }}>Long text doesn't fit into 120px</Text>
 </Box>
 `;
 

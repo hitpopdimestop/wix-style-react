@@ -9,11 +9,6 @@
 }
 
 :import {
-  -st-from: "../../../Foundation/stylable/spacing.st.css";
-  -st-named: SP2;
-}
-
-:import {
   -st-from: "../../../Foundation/stylable/typography.st.css";
   -st-named: normal, bold;
 }

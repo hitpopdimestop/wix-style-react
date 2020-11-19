@@ -1,7 +1,7 @@
 {
   "name": "wix-style-react",
   "description": "wix-style-react",
-  "version": "9.40.0",
+  "version": "9.41.0",
   "main": "./dist/src/index.js",
   "module": "./dist/es/src/index.js",
   "typings": "./dist/es/src/index.d.ts",
@@ -107,7 +107,7 @@
   },
   "homepage": "https://github.com/wix/wix-style-react#readme",
   "devDependencies": {
-    "@applitools/eyes-storybook": "^3.10.1",
+    "@applitools/eyes-storybook": "3.11.0",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/parser": "^7.12.5",

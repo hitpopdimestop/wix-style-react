@@ -190,6 +190,7 @@ class Ellipsis extends React.PureComponent {
       showTooltip,
       textAlign,
       zIndex,
+      size,
     } = this.props;
     const { isActive, textContent } = this.state;
 
@@ -211,6 +212,7 @@ class Ellipsis extends React.PureComponent {
           placement,
           textAlign,
           zIndex,
+          size,
         }}
       >
         {this._renderText()}

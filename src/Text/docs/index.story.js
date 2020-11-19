@@ -160,6 +160,13 @@ export default {
           }),
 
           example({
+            title: `Tooltip size`,
+            text:
+              'Tooltip size can be adjusted with `size` prop that is passed through `tooltipProps`.',
+            source: examples.smallTooltip,
+          }),
+
+          example({
             title: 'TagName',
             text: 'Control the rendered HTML tag.',
             source: examples.custom,

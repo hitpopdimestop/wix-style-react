@@ -8,7 +8,15 @@ const placeholderStyle = {
   objectFit: 'cover',
 };
 
-const Image = ({ dataHook, src, fit, position, style, ...otherProps }) => {
+const Image = ({
+  dataHook,
+  src,
+  fit,
+  position,
+  style,
+  className,
+  ...otherProps
+}) => {
   const source = src || placeholderSource;
   const isTiled = !!src && fit === 'tile';
   const imgStyle = !src
@@ -26,7 +34,7 @@ const Image = ({ dataHook, src, fit, position, style, ...otherProps }) => {
   return (
     <img
       {...otherProps}
-      className={st(classes.root, { tiled: isTiled })}
+      className={st(classes.root, { tiled: isTiled }, className)}
       data-hook={dataHook}
       src={source}
       style={{ ...style, ...imgStyle }}
@@ -35,8 +43,11 @@ const Image = ({ dataHook, src, fit, position, style, ...otherProps }) => {
 };
 
 Image.propTypes = {
-  /** Hook for testing purposes. */
+  /** Applied as data-hook HTML attribute that can be used in the tests */
   dataHook: PropTypes.string,
+
+  /** A css class to be applied to the component's root element */
+  className: PropTypes.string,
 
   /** Image asset source. A default placeholder image is displayed when source is not provided. */
   src: PropTypes.string,

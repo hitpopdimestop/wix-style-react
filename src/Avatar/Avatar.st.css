@@ -249,7 +249,7 @@
   width: 90px;
   border-radius: 45px;
 }
-.avatarContainer:size(size72) .loaderContainer, 
+.avatarContainer:size(size72) .loaderContainer,
 .avatarContainer:size(size72) .avatar {
   height: 72px;
   width: 72px;
@@ -333,8 +333,8 @@
 .avatarContainer:size(size36)[data-madefor="true"] .avatar:contentType(text)::content,
 .avatarContainer:size(size30)[data-madefor="true"] .avatar:contentType(text)::content,
 .avatarContainer:size(size24)[data-madefor="true"] .avatar:contentType(text)::content,
-.avatarContainer:size(size18)[data-madefor="true"] .avatar:contentType(text)::content   
-{ 
+.avatarContainer:size(size18)[data-madefor="true"] .avatar:contentType(text)::content
+{
   -st-mixin: text-tiny-bold
 }
 

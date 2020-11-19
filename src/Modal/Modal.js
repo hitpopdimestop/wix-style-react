@@ -8,6 +8,7 @@ import { flexPositions } from './constants';
 import { ZIndex } from '../ZIndex';
 import { FontUpgradeContext } from '../FontUpgrade/context';
 import FontUpgrade from '../FontUpgrade';
+import { ThemeProviderConsumerBackwardCompatible } from '../ThemeProvider/ThemeProviderConsumerBackwardCompatible';
 
 const CHILDREN_WRAPPER_DIV_ID = 'modal-children-container';
 
@@ -145,36 +146,41 @@ class Modal extends React.PureComponent {
         <FontUpgradeContext.Consumer>
           {({ active }) => {
             return (
-              <ReactModal
-                portalClassName={st(
-                  classes.portal,
-                  { scrollable },
-                  `portal portal-${dataHook}`,
-                )}
-                isOpen={isOpen}
-                shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-                onRequestClose={onRequestClose}
-                onAfterOpen={onAfterOpen}
-                style={modalStyles}
-                className={classes.modal}
-                contentLabel={contentLabel}
-                closeTimeoutMS={closeTimeoutMS}
-                parentSelector={parentSelector}
-              >
-                <FontUpgrade active={!!active}>
-                  {isOpen &&
-                    shouldDisplayCloseButton &&
-                    this.renderCloseButton()}
-                  <div
-                    data-scrollable={scrollable || null}
-                    id={CHILDREN_WRAPPER_DIV_ID}
-                    className={classes.childrenContainer}
-                    onClick={this.handleOverlayClick}
+              <ThemeProviderConsumerBackwardCompatible>
+                {({ className: themeClassName }) => (
+                  <ReactModal
+                    portalClassName={st(
+                      classes.root,
+                      { scrollable },
+                      `portal portal-${dataHook}`,
+                      themeClassName,
+                    )}
+                    isOpen={isOpen}
+                    shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+                    onRequestClose={onRequestClose}
+                    onAfterOpen={onAfterOpen}
+                    style={modalStyles}
+                    className={classes.modal}
+                    contentLabel={contentLabel}
+                    closeTimeoutMS={closeTimeoutMS}
+                    parentSelector={parentSelector}
                   >
-                    {children}
-                  </div>
-                </FontUpgrade>
-              </ReactModal>
+                    <FontUpgrade active={!!active}>
+                      {isOpen &&
+                        shouldDisplayCloseButton &&
+                        this.renderCloseButton()}
+                      <div
+                        data-scrollable={scrollable || null}
+                        id={CHILDREN_WRAPPER_DIV_ID}
+                        className={classes.childrenContainer}
+                        onClick={this.handleOverlayClick}
+                      >
+                        {children}
+                      </div>
+                    </FontUpgrade>
+                  </ReactModal>
+                )}
+              </ThemeProviderConsumerBackwardCompatible>
             );
           }}
         </FontUpgradeContext.Consumer>

@@ -4,13 +4,18 @@
 }
 
 :import {
+  -st-from: "../../../Foundation/stylable/typography.st.css";
+  -st-named: normal, thin;
+}
+
+:import {
   -st-from: "../../../Text/Text.st.css";
   -st-default: Text;
 }
 
 :import {
   -st-from: "../foundations/colors.st.css";
-  -st-named: B10, B20, B50, D10-40, D20, D80;
+  -st-named: B10, B20, B50, D10-40, D10, D20, D40, D80;
 }
 
 .root {
@@ -24,9 +29,15 @@
 }
 
 .root::title {
-  color: value(D20);
+  -st-mixin: thin;
+  color: value(D40);
   font-size: 14px;
   line-height: 20px;
+}
+
+.root::title strong {
+  -st-mixin: normal;
+  color: value(D10);
 }
 
 .root:selected,
@@ -46,7 +57,9 @@
   background-color: value(B50);
 }
 .root:highlighted::title,
-.root:hover::title{
+.root:hover::title,
+.root:highlighted::title strong,
+.root:hover::title strong {
   color: value(B10);
 }
 

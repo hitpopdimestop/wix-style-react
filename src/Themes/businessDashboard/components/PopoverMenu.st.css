@@ -4,12 +4,21 @@
 }
 
 :import {
+  -st-from: "../../../Foundation/stylable/shadows.st.css";
+  -st-named: shadow10;
+}
+
+:import {
   -st-from: "wix-ui-core/dist/src/components/popover/Popover.st.css";
   -st-named: popoverContent;
 }
 
 .root {
   -st-extends: PopoverMenu;
+}
+
+.root::popoverContent {
+  box-shadow: value(shadow10);
 }
 
 .root:withArrow::popover[data-placement*="top"] .popoverContent,
