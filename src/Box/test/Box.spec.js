@@ -161,6 +161,14 @@ describe('Box', () => {
 
       expect(await driver.getStyle()).toContain(`padding: ${expectedPadding}`);
     });
+
+    it('should render with padding when passing space-separated spacing tokens', async () => {
+      const expectedPadding = `${spacingUnit * 2}px ${spacingUnit * 5}px`;
+      const children = <span>Children</span>;
+      const driver = createDriver(<Box padding="SP2 SP5">{children}</Box>);
+
+      expect(await driver.getStyle()).toContain(`padding: ${expectedPadding}`);
+    });
   });
 
   describe('formatSizeValue function', () => {

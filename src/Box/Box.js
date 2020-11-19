@@ -37,15 +37,30 @@ const spacingValues = {
  *   2. A predefined spacing value with semantic name (tiny, small, etc.)
  *   3. Space-separated values that are represented by a string (for example: "3px 3px")
  * */
-const formatSpacingValue = value => {
+const formatSingleSpacingValue = value => {
   if (typeof value !== 'undefined') {
-    if (isFinite(value)) {
-      return `${value * spacingUnit}px`;
-    }
-
-    return spacingTokens[value] || spacingValues[value] || `${value}`;
+    return formatSpacingValue(value);
   }
 };
+
+const formatComplexSpacingValue = value => {
+  if (typeof value !== 'undefined') {
+    return value
+      .toString()
+      .split(' ')
+      .map(size => formatSpacingValue(size))
+      .join(' ');
+  }
+};
+
+const formatSpacingValue = value => {
+  if (isFinite(value)) {
+    return `${value * spacingUnit}px`;
+  }
+
+  return spacingTokens[value] || spacingValues[value] || `${value}`;
+};
+
 const formatSizeValue = value => {
   if (typeof value !== 'undefined')
     return isFinite(value) ? `${value}px` : `${value}`;
@@ -105,16 +120,16 @@ const Box = ({
     ...style,
 
     // Spacing
-    padding: formatSpacingValue(padding),
-    paddingTop: formatSpacingValue(paddingTop),
-    paddingRight: formatSpacingValue(paddingRight),
-    paddingBottom: formatSpacingValue(paddingBottom),
-    paddingLeft: formatSpacingValue(paddingLeft),
-    margin: formatSpacingValue(margin),
-    marginTop: formatSpacingValue(marginTop),
-    marginRight: formatSpacingValue(marginRight),
-    marginBottom: formatSpacingValue(marginBottom),
-    marginLeft: formatSpacingValue(marginLeft),
+    padding: formatComplexSpacingValue(padding),
+    paddingTop: formatSingleSpacingValue(paddingTop),
+    paddingRight: formatSingleSpacingValue(paddingRight),
+    paddingBottom: formatSingleSpacingValue(paddingBottom),
+    paddingLeft: formatSingleSpacingValue(paddingLeft),
+    margin: formatComplexSpacingValue(margin),
+    marginTop: formatSingleSpacingValue(marginTop),
+    marginRight: formatSingleSpacingValue(marginRight),
+    marginBottom: formatSingleSpacingValue(marginBottom),
+    marginLeft: formatSingleSpacingValue(marginLeft),
 
     // Sizing
     minWidth: formatSizeValue(minWidth),
