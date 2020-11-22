@@ -83,15 +83,13 @@ export const addressInputOptionBuilder = ({
   className,
   prefix,
   mainLabel,
-  displayLabel,
   secondaryLabel,
   suffix,
   disabled,
-  size,
-  ellipsis,
   dataHook,
   optionLayout,
   onClick,
+  displayLabel,
 }) => ({
   id,
   disabled,
@@ -106,8 +104,6 @@ export const addressInputOptionBuilder = ({
       mainLabel={mainLabel}
       secondaryLabel={secondaryLabel}
       suffix={suffix}
-      size={size}
-      ellipsis={ellipsis}
       selected={selected}
       highlighted={hovered}
       onClick={onClick}

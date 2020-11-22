@@ -8,7 +8,7 @@ export const optionLayout = `
       <AddressInputOption
         mainLabel="main label"
         optionLayout="single-line"
-        secondaryLabel="one line layout"
+        secondaryLabel="single line layout"
       />
     </Cell>
     <Cell>

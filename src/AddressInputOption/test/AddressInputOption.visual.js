@@ -1,6 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import AddressInputOption from '../AddressInputOption';
+import AddressInputOption, {
+  addressInputOptionBuilder,
+} from '../AddressInputOption';
+import { AddressInput } from '../..';
 
 const commonProps = {
   mainLabel: 'address input option',
@@ -16,13 +19,13 @@ const tests = [
       {
         it: 'single-line layout',
         props: {
-          secondaryLabel: 'secondary labal',
+          secondaryLabel: 'secondary label',
         },
       },
       {
         it: 'double-line layout',
         props: {
-          secondaryLabel: 'secondary labal',
+          secondaryLabel: 'secondary label',
           optionLayout: 'double-line',
         },
       },
@@ -62,6 +65,7 @@ const tests = [
         it: 'selected with suffix',
         props: {
           suffix: 'suffix',
+          selected: true,
         },
       },
       {
@@ -91,10 +95,10 @@ const tests = [
       },
 
       {
-        it: 'selected with subtitle',
+        it: 'selected with secondary label',
         props: {
           selected: true,
-          subtitle: 'This is a nice subtitle',
+          secondaryLabel: 'This is a nice subtitle',
         },
       },
     ],
@@ -135,3 +139,31 @@ tests.forEach(({ describe, its }) => {
     ).add(it, () => <AddressInputOption {...commonProps} {...props} />);
   });
 });
+
+storiesOf(`${AddressInputOption.displayName}/builder`, module).add(
+  'builder',
+  () => (
+    <AddressInput
+      options={[
+        addressInputOptionBuilder({
+          id: 0,
+          title: 'option 1',
+          subtitle: 'subtitle 1',
+          checkbox: true,
+        }),
+        addressInputOptionBuilder({
+          id: 1,
+          title: 'option 2',
+          subtitle: 'subtitle 2',
+          checkbox: true,
+        }),
+        addressInputOptionBuilder({
+          id: 2,
+          title: 'option 3',
+          subtitle: 'subtitle 3',
+          checkbox: true,
+        }),
+      ]}
+    />
+  ),
+);
