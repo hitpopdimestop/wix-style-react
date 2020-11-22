@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import AddressInputOption, {
   addressInputOptionBuilder,
 } from '../AddressInputOption';
-import { AddressInput } from '../..';
+import { AddressInput, Box } from '../..';
 
 const commonProps = {
   mainLabel: 'address input option',
@@ -136,7 +136,11 @@ tests.forEach(({ describe, its }) => {
     storiesOf(
       `${AddressInputOption.displayName}${describe ? '/' + describe : ''}`,
       module,
-    ).add(it, () => <AddressInputOption {...commonProps} {...props} />);
+    ).add(it, () => (
+      <Box width="500px">
+        <AddressInputOption {...commonProps} {...props} />
+      </Box>
+    ));
   });
 });
 
@@ -147,21 +151,18 @@ storiesOf(`${AddressInputOption.displayName}/builder`, module).add(
       options={[
         addressInputOptionBuilder({
           id: 0,
-          title: 'option 1',
-          subtitle: 'subtitle 1',
-          checkbox: true,
+          mainLabel: 'option 1',
+          secondaryLabel: 'subtitle 1',
         }),
         addressInputOptionBuilder({
           id: 1,
-          title: 'option 2',
-          subtitle: 'subtitle 2',
-          checkbox: true,
+          mainLabel: 'option 2',
+          secondaryLabel: 'subtitle 2',
         }),
         addressInputOptionBuilder({
           id: 2,
-          title: 'option 3',
-          subtitle: 'subtitle 3',
-          checkbox: true,
+          mainLabel: 'option 3',
+          secondaryLabel: 'subtitle 3',
         }),
       ]}
     />
