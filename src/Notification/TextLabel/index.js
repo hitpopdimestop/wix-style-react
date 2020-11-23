@@ -7,7 +7,12 @@ import { EllipsisCommonProps } from '../../common/PropTypes/EllipsisCommon';
 
 const TextLabel = ({ children, ...ellipsisProps }) => (
   <div className={classes.label}>
-    <Text {...ellipsisProps} light dataHook={dataHooks.notificationLabel}>
+    <Text
+      weight="normal"
+      {...ellipsisProps}
+      light
+      dataHook={dataHooks.notificationLabel}
+    >
       {children}
     </Text>
   </div>
