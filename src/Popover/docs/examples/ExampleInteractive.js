@@ -36,7 +36,7 @@ class ClickablePopover extends React.Component {
           </Popover.Element>
           <Popover.Content>
             <Box padding="12px 24px" width={140}>
-              <Text size="small" skin="standard" weight="normal">
+              <Text size="small" skin="standard" weight="thin">
                 Clicking inside the popover will not close it, but clicking outside will.
               </Text>
             </Box>
@@ -85,7 +85,7 @@ class HoverablePopover extends React.Component {
           </Popover.Element>
           <Popover.Content>
             <Box padding="12px 24px" width={100}>
-              <Text size="small" skin="standard" weight="normal">
+              <Text size="small" skin="standard" weight="thin">
                 Now hover me!
               </Text>
             </Box>

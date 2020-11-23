@@ -35,7 +35,7 @@ class PopoverWithState extends React.Component {
               <Heading appearance="H4">
                 Popover content:
               </Heading>
-              <Text size="small" skin="standard" weight="normal">
+              <Text size="small" skin="standard" weight="thin">
                 Can be any react node!
               </Text>
             </Box>

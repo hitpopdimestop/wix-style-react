@@ -37,7 +37,7 @@ const StaticPopover = () => (
     </Popover.Element>
     <Popover.Content>
       <Box padding="12px 24px" width={140}>
-        <Text size="small" skin="standard" weight="normal">
+        <Text size="small" skin="standard" weight="thin">
           Content
         </Text>
       </Box>

@@ -17,7 +17,7 @@ export const createStaticPopoverExample = props => `
     </Popover.Element>
     <Popover.Content>
       <Box align="center" verticalAlign="middle" width={300} height={40}>
-        <Text size="small" skin="standard" weight="normal">
+        <Text size="small" skin="standard" weight="thin">
           I am a very long popover's content
         </Text>
       </Box>
