@@ -4,12 +4,12 @@ export const simple = `() => {
       label:
         'New Order: 1 item, $4.99 this will be a longer text that will be two lines or a very very long text for a vertical that needs a lot of text that will be three lines',
       suffix: (
-        <TextButton weight="normal" size="small">
+        <TextButton weight="thin" size="small">
           suffix button
         </TextButton>
       ),
       labelAction: (
-        <TextButton weight="normal" size="small">
+        <TextButton weight="thin" size="small">
           View Order
         </TextButton>
       ),
@@ -19,7 +19,7 @@ export const simple = `() => {
         'New Order: 1 item, $4.99 this will be a longer text that will be two lines or a very very long text for a vertical that needs a lot of text that will be three lines',
       suffix: 'Jan 1, 2019 12:03 AM',
       labelAction: (
-        <TextButton weight="normal" size="small">
+        <TextButton weight="thin" size="small">
           View Order
         </TextButton>
       ),
@@ -32,7 +32,7 @@ export const simple = `() => {
       label:
         'New Order: 1 item, $4.99 this will be a longer text that will be two lines or a very very long text for a vertical that needs a lot of text that will be three lines',
       labelAction: (
-        <TextButton weight="normal" size="small">
+        <TextButton weight="thin" size="small">
           View Order
         </TextButton>
       ),
@@ -42,7 +42,7 @@ export const simple = `() => {
         'New Order: 1 item, $4.99 this will be a longer text that will be two lines or a very very long text for a vertical that needs a lot of text that will be three lines',
       suffix: 'Jan 1, 2019 12:03 AM',
       labelAction: (
-        <TextButton weight="normal" size="small">
+        <TextButton weight="thin" size="small">
           View Order
         </TextButton>
       ),

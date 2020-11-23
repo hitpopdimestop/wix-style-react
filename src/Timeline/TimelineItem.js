@@ -31,7 +31,7 @@ class TimelineItem extends React.PureComponent {
           {isString(item.label) ? (
             <Text
               dataHook={`${dataHooks.timelineLabel}-${idx}`}
-              weight="normal"
+              weight="thin"
               size="small"
               className={classes.labelText}
             >
@@ -57,7 +57,7 @@ class TimelineItem extends React.PureComponent {
             {isString(item.suffix) ? (
               <Text
                 dataHook={`${dataHooks.timelineTextSuffix}-${idx}`}
-                weight="normal"
+                weight="thin"
                 light
                 secondary
                 size="small"
