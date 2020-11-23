@@ -4,7 +4,7 @@
 }
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
-  -st-named: text-medium-normal, text-medium-bold, text-tiny-normal;
+  -st-named: text-medium-thin, text-medium-bold, text-tiny-normal, text-tiny-thin;
 }
 :import {
   -st-from: '../AddItem/AddItem.st.css';
@@ -106,11 +106,11 @@
 }
 
 .title {
-  -st-mixin: text-medium-normal;
+  -st-mixin: text-medium-thin;
 }
 
 .subtitle {
-  -st-mixin: text-tiny-normal;
+  -st-mixin: text-tiny-thin;
 }
 
 .title,
