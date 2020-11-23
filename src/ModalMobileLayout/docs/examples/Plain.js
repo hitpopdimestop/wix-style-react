@@ -21,7 +21,7 @@ class Plain extends React.Component {
           <ModalMobileLayout
             title={<Text weight="bold">Enter VAT ID</Text>}
             content={
-              <Text>
+              <Text weight="thin">
                 Enter a valid European Union VAT identification number for the
                 ‘Reverse Charge’ mechanism in order to apply.
               </Text>

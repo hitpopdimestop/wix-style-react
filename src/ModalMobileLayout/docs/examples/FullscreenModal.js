@@ -30,7 +30,7 @@ export default () => (
             <Heading appearance={'H1'}>Welcome!</Heading>
           </Box>
           <Box marginBottom="36px">
-            <Text weight="normal" secondary>
+            <Text weight="thin" secondary>
               First impressions count. Apps have one chance to grab a new user’s
               attention. Use it well.
             </Text>
