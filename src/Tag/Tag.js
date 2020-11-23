@@ -35,7 +35,7 @@ class Tag extends React.PureComponent {
         secondary={theme !== 'dark'}
         ellipsis
         size={tagToTextSize[size]}
-        weight="normal"
+        weight="thin"
         dataHook={dataHooks.text}
       >
         {children}
