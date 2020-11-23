@@ -3,26 +3,25 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import colors from '../colors.scss';
-import styles from './Box.scss';
-
+import { classes } from './Box.st.css';
 import { filterObject } from '../utils/filterObject';
 import { spacingUnit, spacingTokens } from '../spacing';
 
 const directions = {
-  horizontal: styles.horizontal,
-  vertical: styles.vertical,
+  horizontal: classes.horizontal,
+  vertical: classes.vertical,
 };
 const horizontalAlignmentValues = {
-  left: styles.left,
-  center: styles.center,
-  right: styles.right,
-  'space-between': styles.spaceBetween,
+  left: classes.left,
+  center: classes.center,
+  right: classes.right,
+  'space-between': classes.spaceBetween,
 };
 const verticalAlignmentValues = {
-  top: styles.top,
-  middle: styles.middle,
-  bottom: styles.bottom,
-  'space-between': styles.spaceBetween,
+  top: classes.top,
+  middle: classes.middle,
+  bottom: classes.bottom,
+  'space-between': classes.spaceBetween,
 };
 const spacingValues = {
   tiny: `${spacingUnit}px`,
@@ -108,14 +107,18 @@ const Box = ({
 
   ...nativeStyles
 }) => {
-  const rootClassNames = classNames(styles.root, className, {
-    [styles.inline]: inline,
+  const rootClassNames = classNames(
+    classes.root,
+    {
+      [classes.inline]: inline,
 
-    // Alignment
-    [directions[direction]]: direction,
-    [horizontalAlignmentValues[align]]: align,
-    [verticalAlignmentValues[verticalAlign]]: verticalAlign,
-  });
+      // Alignment
+      [directions[direction]]: direction,
+      [horizontalAlignmentValues[align]]: align,
+      [verticalAlignmentValues[verticalAlign]]: verticalAlign,
+    },
+    className,
+  );
   const rootStyles = {
     ...style,
 
