@@ -65,7 +65,7 @@ class SidebarBackButton extends React.PureComponent {
                 className={st(classes.arrow, { animated: animateArrow })}
               />
               <Text
-                weight="bold"
+                weight="normal"
                 size="small"
                 secondary={skin === sidebarSkins.light}
                 light={skin === sidebarSkins.dark}
