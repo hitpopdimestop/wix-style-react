@@ -6,7 +6,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
-  -st-named: text-medium-normal, text-medium-thin;
+  -st-named: text-medium-thin;
 }
 
 :vars {
@@ -33,7 +33,7 @@
   position: absolute;
   pointer-events: none;
   color: value(D40);
-  -st-mixin: text-medium-normal;
+  -st-mixin: text-medium-thin;
 }
 
 .root:disabled :global(.public-DraftEditorPlaceholder-root) {
