@@ -39,7 +39,7 @@ const ToggleButton = ({
     <Text
       ellipsis
       size="medium"
-      weight="normal"
+      weight="thin"
       skin={disabled ? 'disabled' : 'standard'}
     >
       {children}
