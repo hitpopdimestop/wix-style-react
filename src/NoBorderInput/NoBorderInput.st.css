@@ -10,7 +10,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
-  -st-named: text-tiny-normal, text-small-normal, text-medium-normal;
+  -st-named: text-tiny-normal, text-tiny-thin, text-small-thin, text-medium-thin;
 }
 
 :import {
@@ -124,12 +124,12 @@
 }
 
 .root:size(small) input {
-  -st-mixin: text-small-normal;
+  -st-mixin: text-small-thin;
 }
 
 .root:size(medium) input,
 .root:size(large) input {
-  -st-mixin: text-medium-normal;
+  -st-mixin: text-medium-thin;
 }
 
 /* Focus */
