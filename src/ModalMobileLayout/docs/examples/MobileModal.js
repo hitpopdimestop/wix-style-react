@@ -22,7 +22,7 @@ export default () => (
     <ModalMobileLayout
       title={<Text weight="bold">Enter VAT ID</Text>}
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
