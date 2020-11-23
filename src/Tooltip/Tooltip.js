@@ -95,7 +95,7 @@ class Tooltip extends React.PureComponent {
                 <RawText
                   dataHook={dataHooks.tooltipText}
                   size={textSize}
-                  weight="normal"
+                  weight="thin"
                   light
                 >
                   {content}
