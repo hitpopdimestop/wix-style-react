@@ -276,7 +276,7 @@ export default class TimeInput extends Component {
           <Box verticalAlign="middle" flexGrow={0} marginRight="6px">
             {this.state.ampmMode && (
               <Text
-                weight="normal"
+                weight="thin"
                 skin={disabled ? 'disabled' : 'standard'}
                 className={classes.ampm}
                 onClick={this._handleAmPmClick}
@@ -295,7 +295,7 @@ export default class TimeInput extends Component {
               <Box marginRight="6px" width="max-content">
                 {typeof customSuffix === 'string' ? (
                   <Text
-                    weight="normal"
+                    weight="thin"
                     light
                     secondary
                     dataHook={dataHooks.customSuffix}
