@@ -6,7 +6,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
-  -st-named: text-small-normal, text-medium-normal;
+  -st-named: text-small-thin, text-medium-thin;
 }
 
 :import {
@@ -35,7 +35,7 @@
   --rowHeight: 35px;
 }
 .root :global(.public-DraftEditorPlaceholder-root) {
-  -st-mixin: text-medium-normal;
+  -st-mixin: text-medium-thin;
   color: value(D40);
   margin: 2px 0;
   position: absolute;
@@ -44,7 +44,7 @@
   left: 13px;
 }
 .root:size(small) :global(.public-DraftEditorPlaceholder-root) {
-  -st-mixin: text-small-normal;
+  -st-mixin: text-small-thin;
 }
 .root :global(.public-DraftEditor-content) {
   -st-mixin: defaultScrollBar; /* TODO: hide will not hovering  */
@@ -90,11 +90,11 @@
   padding-right: 2px;
 }
 .root .textWrapper {
-  -st-mixin: text-medium-normal;
+  -st-mixin: text-medium-thin;
   display: inline;
 }
 .root:size(small) .textWrapper {
-  -st-mixin: text-small-normal;
+  -st-mixin: text-small-thin;
 }
 .root :global(.public-DraftStyleDefault-block) {
   line-height: var(--rowHeight);
