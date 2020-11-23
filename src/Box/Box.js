@@ -1,27 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import colors from '../colors.scss';
-import { classes } from './Box.st.css';
+import { st, classes } from './Box.st.css';
 import { filterObject } from '../utils/filterObject';
 import { spacingUnit, spacingTokens } from '../spacing';
 
 const directions = {
-  horizontal: classes.horizontal,
-  vertical: classes.vertical,
+  horizontal: 'horizontal',
+  vertical: 'vertical',
 };
 const horizontalAlignmentValues = {
-  left: classes.left,
-  center: classes.center,
-  right: classes.right,
-  'space-between': classes.spaceBetween,
+  left: 'left',
+  center: 'center',
+  right: 'right',
+  'space-between': 'space-between',
 };
 const verticalAlignmentValues = {
-  top: classes.top,
-  middle: classes.middle,
-  bottom: classes.bottom,
-  'space-between': classes.spaceBetween,
+  top: 'top',
+  middle: 'middle',
+  bottom: 'bottom',
+  'space-between': 'space-between',
 };
 const spacingValues = {
   tiny: `${spacingUnit}px`,
@@ -107,15 +106,15 @@ const Box = ({
 
   ...nativeStyles
 }) => {
-  const rootClassNames = classNames(
+  const rootClassNames = st(
     classes.root,
     {
-      [classes.inline]: inline,
+      inline,
 
       // Alignment
-      [directions[direction]]: direction,
-      [horizontalAlignmentValues[align]]: align,
-      [verticalAlignmentValues[verticalAlign]]: verticalAlign,
+      direction,
+      alignItems: align,
+      justifyContent: verticalAlign,
     },
     className,
   );
