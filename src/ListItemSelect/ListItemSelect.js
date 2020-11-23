@@ -126,7 +126,7 @@ class ListItemSelect extends React.PureComponent {
       ellipsis,
       showDelay: 300,
       skin: disabled ? 'disabled' : 'standard',
-      weight: checkbox ? 'thin' : 'normal',
+      weight: 'thin',
       light: selected && !checkbox,
     };
 
