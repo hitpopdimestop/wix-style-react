@@ -160,7 +160,7 @@ class StarsRatingBar extends React.PureComponent {
           dataHook={dataHooks.ratingCaption}
           ellipsis
           size="small"
-          weight="bold"
+          weight="normal"
           secondary
         >
           {rateCaptionCurrentLabel}
