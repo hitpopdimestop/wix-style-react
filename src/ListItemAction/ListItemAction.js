@@ -77,7 +77,7 @@ class ListItemActionComponent extends React.PureComponent {
           dataHook="list-item-action-title"
           size={size}
           ellipsis={ellipsis}
-          weight="normal"
+          weight="thin"
           placement="right"
           skin={disabled ? 'disabled' : 'standard'}
           {...tooltipModifiers}
@@ -91,7 +91,7 @@ class ListItemActionComponent extends React.PureComponent {
             secondary
             size="small"
             ellipsis={ellipsis}
-            weight="normal"
+            weight="thin"
             placement="right"
             skin={disabled ? 'disabled' : 'standard'}
             light={!disabled}
