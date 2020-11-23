@@ -41,7 +41,7 @@ class VerticalTabsItem extends React.PureComponent {
     const { size } = this.context;
     const isTitle = type === 'title';
     const commonProps = {
-      weight: 'normal',
+      weight: 'thin',
       size: isTitle ? 'small' : size,
       dataHook: 'vertical-tabs-item-text',
     };
