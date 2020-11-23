@@ -81,7 +81,7 @@ class LabelledElement extends React.Component {
             size="medium"
             light={!labelTop}
             secondary={!labelTop}
-            weight="normal"
+            weight="thin"
             className={classes.labelText}
           >
             {label}
