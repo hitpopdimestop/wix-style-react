@@ -107,7 +107,7 @@ class Step extends React.PureComponent {
           <Text
             key={transitionSequence}
             ellipsis
-            weight="normal"
+            weight="thin"
             size={styleType === Type.Text ? 'medium' : 'small'}
             showTooltip={!active}
             dataHook={DataHook.StepText}
