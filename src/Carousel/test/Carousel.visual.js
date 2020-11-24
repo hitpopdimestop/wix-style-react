@@ -83,6 +83,30 @@ const tests = [
     ],
   },
   {
+    describe: 'Gradient Edges',
+    its: [
+      {
+        it: 'Without gradients',
+        props: {
+          showEdgesGradient: false,
+        },
+      },
+      {
+        it: 'Display default color gradients',
+        props: {
+          showEdgesGradient: true,
+        },
+      },
+      {
+        it: 'Display custom color gradients',
+        props: {
+          showEdgesGradient: true,
+          edgesGradientColor: '#FF0000',
+        },
+      },
+    ],
+  },
+  {
     describe: 'Variable width',
     its: [
       {

@@ -130,6 +130,16 @@ They can be placed in one of these positions: \`sides\` (default), \`overlay\`, 
               'Set variableWidth to disable automatic slide width calculation. Use this prop when you want the carousel to show more than a single item simultaneously.',
             source: examples.variableWidthExample,
           }),
+
+          example({
+            title: 'Gradients on Edges',
+            text: `
+Show gradients on the left and right edges of the carousel.\n
+Enable the gradient edges with the \`showEdgesGradient\` flag and define the color using \`edgesGradientColor\`.\n
+If not given a \`edgesGradientColor\`, the gradient will use the D70 color.
+            `,
+            source: examples.gradientEdges,
+          }),
         ],
       }),
 

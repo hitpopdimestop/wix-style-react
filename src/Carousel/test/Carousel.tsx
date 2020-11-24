@@ -26,6 +26,8 @@ function CarouselWithAllProps() {
       variableWidth
       controlsPosition="sides"
       showControlsShadow={false}
+      showEdgesGradient={false}
+      edgesGradientColor="#FF0000"
     />
   );
 }

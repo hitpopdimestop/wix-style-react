@@ -1,6 +1,6 @@
 :import {
   -st-from: '../Foundation/stylable/colors.st.css';
-  -st-named: THEME-COLOR-50;
+  -st-named: THEME-COLOR-50, D70;
 }
 
 :import {
@@ -21,7 +21,8 @@
 .root {
   -st-states: controlsPosition(enum(sides, overlay, bottom, none)),
     controlsSize(enum(tiny, small, medium, large)),
-    showControlsShadow;
+    showControlsShadow,
+    showEdgesGradient;
 }
 
 .root:controlsSize(tiny) {
@@ -86,8 +87,39 @@
   left: 0;
 }
 
+.root:showEdgesGradient :global(.container) {
+  padding: 40px;
+  background: rgba(0, 0, 0, 1);
+}
+
+.root:showEdgesGradient :global(.slick-list) {
+  position: relative;
+}
+
+.root:showEdgesGradient :global(.slick-list:before),
+.root:showEdgesGradient :global(.slick-list:after) {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+}
+
+.root:showEdgesGradient :global(.slick-list:before) {
+  left: 0;
+  background: linear-gradient(to left, rgba(240, 244, 247, 0) 50%, var(--edgesGradientColor, value(D70)));
+}
+
+.root:showEdgesGradient :global(.slick-list:after) {
+  right: 0;
+  background: linear-gradient(to right, rgba(240, 244, 247, 0) 50%, var(--edgesGradientColor, value(D70)));
+}
+
 .image {
   width: 100%;
+  height: 100%;
 }
 
 .loader {

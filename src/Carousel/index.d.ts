@@ -22,4 +22,6 @@ export interface CarouselProps {
   controlsPosition?: CarouselControlsPosition;
   controlsSize?: 'tiny' | 'small' | 'medium';
   showControlsShadow?: boolean;
+  showEdgesGradient?: boolean;
+  edgesGradientColor?: string;
 }
