@@ -10,7 +10,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/typography.st.css';
-  -st-named: text-tiny-normal, text-tiny-thin, text-small-thin, text-medium-thin;
+  -st-named: text-tiny-thin, text-small-thin, text-medium-thin;
 }
 
 :import {
@@ -144,7 +144,7 @@
 .root:focus .label,
 .root:hasValue .label,
 .root:noLabel .label {
-  -st-mixin: text-tiny-normal;
+  -st-mixin: text-tiny-thin;
   top: -12px;
 }
 

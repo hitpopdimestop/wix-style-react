@@ -83,7 +83,7 @@ class NoBorderInput extends React.Component {
           className={classes.label}
           htmlFor={id}
           size="medium"
-          weight="normal"
+          weight="thin"
           light
           secondary
           ellipsis
