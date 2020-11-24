@@ -14,7 +14,7 @@ import { dataHooks } from './constants';
 class RadioGroup extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.name = uniqueId('RadioGroup_');
+    this.name = props.name || uniqueId('RadioGroup_');
   }
 
   render() {
@@ -112,6 +112,9 @@ RadioGroup.propTypes = {
 
   /** Text line height */
   lineHeight: PropTypes.string,
+
+  /** Controls html name attribute  */
+  name: PropTypes.string,
 };
 
 RadioGroup.defaultProps = {

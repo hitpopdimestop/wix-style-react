@@ -5,6 +5,8 @@ export interface RadioGroupDriver extends BaseDriver {
   selectByValue: (value: string | number) => void;
   selectByIndex: (index: number) => void;
   getRadioValueAt: (index: number) => string | number;
+  getRadioIdAt: (index: number) => string;
+  getRadioNameAt: (index: number) => string;
   getRadioAtIndex: (index: number) => HTMLElement & RadioButtonDriver;
   getSelectedValue: () => string | number | null;
   isRadioDisabled: (index: number) => boolean;

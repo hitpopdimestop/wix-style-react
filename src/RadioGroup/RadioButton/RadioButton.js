@@ -40,7 +40,9 @@ class RadioButton extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.id = uniqueId();
+
+    const prefix = props.name && `${props.name}_`;
+    this.id = uniqueId(prefix);
   }
 
   render() {

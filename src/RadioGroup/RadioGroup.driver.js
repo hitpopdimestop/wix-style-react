@@ -2,6 +2,7 @@ import toArray from 'lodash/toArray';
 import { isClassExists } from '../../test/utils';
 import radioButtonDriverFactory from './RadioButton/RadioButton.driver';
 import { dataHooks } from './constants';
+import { dataHooks as radioButtonDataHooks } from './RadioButton/constants';
 import { classes } from './RadioGroup.st.css';
 
 const radioGroupDriverFactory = ({ element }) => {
@@ -13,6 +14,13 @@ const radioGroupDriverFactory = ({ element }) => {
     ).map(radio =>
       Object.assign(radio, radioButtonDriverFactory({ element: radio })),
     );
+
+  const getRadioInputAt = index => {
+    const radio = getRadios()[index];
+    return radio.querySelector(
+      `[data-hook="${radioButtonDataHooks.RadioButtonInput}"]`,
+    );
+  };
 
   const getLabelElements = () =>
     getRadios().map(radio => radio.getLabelElement());
@@ -71,6 +79,18 @@ const radioGroupDriverFactory = ({ element }) => {
 
     /** Get the number of rendered radios */
     getNumberOfRadios: () => getRadios().length,
+
+    /** Get the value of radio button id at the provided index */
+    getRadioIdAt: index => {
+      const radioButtonInput = getRadioInputAt(index);
+      return radioButtonInput.id;
+    },
+
+    /** Get the value of radio button name at the provided index */
+    getRadioNameAt: index => {
+      const radioButtonInput = getRadioInputAt(index);
+      return radioButtonInput.name;
+    },
   };
 };
 

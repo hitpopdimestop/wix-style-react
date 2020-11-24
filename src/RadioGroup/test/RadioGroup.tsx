@@ -24,6 +24,7 @@ function RadioGroupWithAllProps() {
       type="button"
       vAlign="center"
       value={1}
+      name="radioGroup"
     >
       <RadioGroup.Radio
         checked

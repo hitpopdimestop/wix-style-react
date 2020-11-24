@@ -10,6 +10,8 @@ export interface RadioGroupUniDriver extends BaseUniDriver {
   selectByValue: (value: string | number) => Promise<void>;
   selectByIndex: (index: number) => Promise<void>;
   getRadioValueAt: (index: number) => Promise<string | number>;
+  getRadioIdAt: (index: number) => Promise<string>;
+  getRadioNameAt: (index: number) => Promise<string>;
   getRadioAtIndex: (
     index: number,
   ) => Promise<HTMLElement & RadioButtonUniDriver>;

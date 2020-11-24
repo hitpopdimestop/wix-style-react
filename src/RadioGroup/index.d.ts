@@ -12,6 +12,7 @@ export interface RadioGroupProps {
   selectionArea?: RadioButtonProps['selectionArea'];
   spacing?: string;
   lineHeight?: string;
+  name?: string;
 }
 
 export default class RadioGroup extends React.PureComponent<RadioGroupProps> {

@@ -166,5 +166,16 @@ describe(RadioGroup.displayName, () => {
         );
       });
     });
+
+    describe('name attribute', () => {
+      it('should set name attribute of radio button', async () => {
+        const driver = createDriver(<DefaultRadioGroup name="test" />);
+        expect(await driver.getRadioNameAt(0)).toBe('test');
+      });
+      it('should set name as radio button id prefix', async () => {
+        const driver = createDriver(<DefaultRadioGroup name="test" />);
+        expect(await driver.getRadioIdAt(0)).toContain('test');
+      });
+    });
   }
 });
