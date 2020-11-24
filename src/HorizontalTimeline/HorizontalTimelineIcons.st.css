@@ -5,7 +5,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/easing.st.css';
-  -st-named: ease-5, ease-6;
+  -st-named: ease-5, ease-3;
 }
 
 .baseIcon {
@@ -55,6 +55,6 @@
 
   100% {
     transform: scale(1);
-    animation-timing-function: value(ease-6);
+    animation-timing-function: value(ease-3);
   }
 }

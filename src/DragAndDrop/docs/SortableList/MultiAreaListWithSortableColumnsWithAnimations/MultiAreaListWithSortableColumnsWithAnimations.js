@@ -121,7 +121,7 @@ export default class MultiAreaListWithSortableColumnsWithAnimations extends Reac
           renderItem={this.renderCell}
           onDrop={this.handleDropCell}
           animationDuration={500}
-          animationTiming={stVars['ease-8']}
+          animationTiming={stVars['ease-7']}
         />
       </div>
     );
@@ -140,7 +140,7 @@ export default class MultiAreaListWithSortableColumnsWithAnimations extends Reac
             renderItem={this.renderColumn}
             onDrop={this.handleDropColumn}
             animationDuration={500}
-            animationTiming={stVars['ease-8']}
+            animationTiming={stVars['ease-7']}
           />
         </div>
       </DragDropContextProvider>

@@ -185,7 +185,7 @@ class TimeTable extends React.PureComponent {
                     renderItem={this._renderItem}
                     insertPosition={insertPosition}
                     animationDuration={500}
-                    animationTiming={stVars['ease-8']}
+                    animationTiming={stVars['ease-7']}
                   />
                   {addItemVisible && this._renderAddItemButton(columnIndex)}
                 </div>

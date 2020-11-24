@@ -1,10 +1,18 @@
 :vars {
+  speed-fast-1: 100;
+  speed-fast-2: 150;
+  speed-medium-1: 200;
+  speed-medium-2: 300;
+  speed-slow-1: 400;
+  speed-slow-2: 500;
+}
+
+:vars {
   ease-1: cubic-bezier(0.23, 1, 0.32, 1);
   ease-2: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  ease-3: cubic-bezier(0.0, 0.0, 0.2, 1);
+  ease-3: cubic-bezier(0, 0, 0.2, 1);
   ease-4: cubic-bezier(0.4, 0.0, 1, 1);
   ease-5: cubic-bezier(0.81, 0, 1, 1);
-  ease-6: cubic-bezier(0, 0, 0.2, 1);
-  ease-7: cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  ease-8: cubic-bezier(0.19, 1, 0.22, 1);
+  ease-6: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  ease-7: cubic-bezier(0.19, 1, 0.22, 1);
 }

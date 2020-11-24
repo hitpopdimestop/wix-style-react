@@ -89,7 +89,7 @@ export default class SingleAreaListWithAnimation extends React.Component {
           renderItem={this.renderItem}
           onDrop={this.handleDrop}
           animationDuration={500}
-          animationTiming={stVars['ease-8']}
+          animationTiming={stVars['ease-7']}
         />
       </div>
     );
