@@ -22,61 +22,6 @@ describe('Tag', () => {
     const id = 'myId';
     const label = 'Hey';
 
-    describe('size', () => {
-      it('should have a default small size', async () => {
-        const driver = createDriver(<Tag id={id}>{label}</Tag>);
-        expect(await driver.isSmall()).toBe(true);
-      });
-
-      it('should have a tiny size', async () => {
-        const driver = createDriver(
-          <Tag id={id} size="tiny">
-            {label}
-          </Tag>,
-        );
-        expect(await driver.isTiny()).toBe(true);
-        expect(await driver.isCloseButtonSmall()).toBe(true);
-        expect(await driver.getTextSize()).toBe(SIZES.tiny);
-        expect(await driver.getTextWeight()).toBe(WEIGHTS.thin);
-      });
-
-      it('should have a small size', async () => {
-        const driver = createDriver(
-          <Tag id={id} size="small">
-            {label}
-          </Tag>,
-        );
-        expect(await driver.isSmall()).toBe(true);
-        expect(await driver.isCloseButtonSmall()).toBe(true);
-        expect(await driver.getTextSize()).toBe(SIZES.small);
-        expect(await driver.getTextWeight()).toBe(WEIGHTS.normal);
-      });
-
-      it('should have a medium size', async () => {
-        const driver = createDriver(
-          <Tag id={id} size="medium">
-            {label}
-          </Tag>,
-        );
-        expect(await driver.isMedium()).toBe(true);
-        expect(await driver.isCloseButtonSmall()).toBe(true);
-        expect(await driver.getTextSize()).toBe(SIZES.small);
-        expect(await driver.getTextWeight()).toBe(WEIGHTS.normal);
-      });
-
-      it('should have a large size', async () => {
-        const driver = createDriver(
-          <Tag id={id} size="large">
-            {label}
-          </Tag>,
-        );
-        expect(await driver.isLarge()).toBe(true);
-        expect(await driver.isCloseButtonLarge()).toBe(true);
-        expect(await driver.getTextSize()).toBe(SIZES.medium);
-        expect(await driver.getTextWeight()).toBe(WEIGHTS.normal);
-      });
-    });
-
     it('should have a label', async () => {
       const driver = createDriver(<Tag id={id}>{label}</Tag>);
       expect(await driver.getLabel()).toBe(label);
