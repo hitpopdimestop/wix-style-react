@@ -25,6 +25,11 @@
   -st-named: text-small-bold, text-tiny-normal, text-medium-normal, text-medium-bold, text-tiny-bold;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
 .placeholder {
   fill: value(F00);
   height: inherit;
@@ -77,7 +82,7 @@
 
 .avatarContainer:fade .indication {
   opacity: 0;
-  transition: opacity 100ms linear;
+  transition: opacity 100ms value(ease-9);
 }
 
 .iconButtonShadow{

@@ -15,4 +15,6 @@
   ease-5: cubic-bezier(0.81, 0, 1, 1);
   ease-6: cubic-bezier(0.18, 0.89, 0.32, 1.28);
   ease-7: cubic-bezier(0.19, 1, 0.22, 1);
+  ease-8: ease-in-out;
+  ease-9: linear;
 }

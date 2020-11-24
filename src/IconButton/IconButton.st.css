@@ -8,6 +8,11 @@
   -st-named: THEME-COLOR-10, THEME-COLOR-20, THEME-COLOR-40, THEME-COLOR-50 ,D80, F00, D10-20, D20-48, D20-54, D20-60, D80-70, P10, P20, D10-30, D80-30;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
 .root {
   -st-extends: ButtonNext;
   -st-states: skin(string), priority(string), size(string);
@@ -24,7 +29,7 @@
   outline: none;
 
   transition-duration: 100ms;
-  transition-timing-function: linear;
+  transition-timing-function: value(ease-9);
   transition-property: background-color, color, border-color;
 
   background-color: value(THEME-COLOR-10);

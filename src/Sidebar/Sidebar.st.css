@@ -13,6 +13,11 @@
   -st-default: calc_rgba;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-8;
+}
+
 :vars {
   sidebarWidth: 228px;
   gradientHeight: 36px;
@@ -113,7 +118,7 @@
 
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: value(ease-8);
 }
 
 .slider::-webkit-scrollbar {

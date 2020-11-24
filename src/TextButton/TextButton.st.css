@@ -15,6 +15,11 @@
     text-small-normal, text-medium-thin, text-medium-normal;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
 .root {
   -st-extends: ButtonNext;
   -st-states: skin(string), underline(string), weight(string), size(string), fluid, ellipsis;
@@ -30,7 +35,7 @@
   border-radius: 2px;
 
   transition-duration: 100ms;
-  transition-timing-function: linear;
+  transition-timing-function: value(ease-9);
   transition-property: background-color, color, border-color;
 
   outline: none;

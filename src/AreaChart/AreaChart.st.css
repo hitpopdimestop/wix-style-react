@@ -7,7 +7,10 @@
   -st-default: calc_rgba;
 }
 
-
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-8;
+}
 
 :vars {
   canvas-top-gap: 6px;
@@ -33,7 +36,7 @@
   left: 50%;
   width: 1px;
   height: calc(100% - value(canvas-bottom-gap));
-  transition: opacity .1s ease-in-out;
+  transition: opacity .1s value(ease-8);
   opacity: 0;
   position: absolute;
   z-index: -1;

@@ -14,6 +14,11 @@
    THEME-COLOR-10,  THEME-COLOR-20,  THEME-COLOR-30,  THEME-COLOR-40, THEME-COLOR-50;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
 /* root */
 .root {
   -st-extends: ButtonNext;
@@ -148,7 +153,7 @@
 
   outline: none;
   background-color: value(D80);
-  transition: all 100ms linear;
+  transition: all 100ms value(ease-9);
 }
 
 .icon:focus-visible {
@@ -206,7 +211,7 @@
   -st-states: placement(enum(tooltip, end, bottom)),
     size(enum(tiny, small, medium, large));
 
-  transition: all 100ms linear;
+  transition: all 100ms value(ease-9);
 }
 
 .label:placement(end):size(tiny) {

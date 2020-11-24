@@ -3,6 +3,11 @@
   -st-named: defaultScrollBar;
 }
 
+:import {
+  -st-from: '../../../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
 .root {
   -st-states: hideTopDivider, hideBottomDivider;
   box-sizing: border-box;
@@ -18,10 +23,10 @@
 
 .root:hideTopDivider .topDivider {
   opacity: 0;
-  transition: opacity 100ms linear;
+  transition: opacity 100ms value(ease-9);
 }
 
 .root:hideBottomDivider .bottomDivider {
   opacity: 0;
-  transition: opacity 100ms linear;
+  transition: opacity 100ms value(ease-9);
 }

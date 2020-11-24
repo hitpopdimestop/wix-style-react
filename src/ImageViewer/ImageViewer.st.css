@@ -10,7 +10,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/easing.st.css';
-  -st-named: ease-6;
+  -st-named: ease-6, ease-9;
 }
 
 :import {
@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s linear;
+  transition: background 0.2s value(ease-9);
   overflow: hidden;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
@@ -65,7 +65,7 @@
   justify-content: center;
   margin: auto;
   align-items: baseline;
-  transition: opacity 0.1s linear;
+  transition: opacity 0.1s value(ease-9);
 }
 
 .buttons > :last-child:not(:first-child) {
@@ -94,7 +94,7 @@
 
 .overlay {
   -st-states: removeRadius;
-  transition: all 0.1s linear;
+  transition: all 0.1s value(ease-9);
   border-radius: value(radius08);
   background-color: value(D10-66);
   position: absolute;

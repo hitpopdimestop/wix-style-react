@@ -8,6 +8,11 @@
 }
 
 :import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
+:import {
   -st-from: "../Tooltip/Tooltip.st.css";
   -st-default: Tooltip;
 }
@@ -133,7 +138,7 @@
   height: 100%;
   padding: 12px;
   border: none;
-  transition: background 0.2s linear;
+  transition: background 0.2s value(ease-9);
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   background-color: value(THEME-COLOR-50);

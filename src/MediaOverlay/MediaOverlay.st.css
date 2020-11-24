@@ -23,6 +23,11 @@
   -st-default: Focusable;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-8;
+}
+
 .root {
   -st-extends: Focusable;
   -st-states: clickable, removeRadius;
@@ -65,7 +70,7 @@
   right: 0;
   bottom: 0;
   padding: value(spacing12);
-  transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms value(ease-8);
 }
 
 .overlay:layer(hover) {

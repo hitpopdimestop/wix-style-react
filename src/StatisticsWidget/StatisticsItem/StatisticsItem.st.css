@@ -13,6 +13,11 @@
   -st-named: B50, D60, F00;
 }
 
+:import {
+  -st-from: '../../Foundation/stylable/easing.st.css';
+  -st-named: ease-8;
+}
+
 :vars {
   gap: 30px;
 }
@@ -27,7 +32,7 @@
   flex-direction: column;
   box-sizing: border-box;
   white-space: nowrap;
-  transition: background-color .3s ease-in-out;
+  transition: background-color .3s value(ease-8);
 }
 
 .item:size(tiny) {

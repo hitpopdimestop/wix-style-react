@@ -18,6 +18,11 @@
   -st-named: sidebarWidth
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-8;
+}
+
 @keyframes backAndForth {
   0% {
     transform: translateX(0px);
@@ -86,5 +91,5 @@
   animation-duration: 4s;
   animation-delay: 3s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: value(ease-8);
 }

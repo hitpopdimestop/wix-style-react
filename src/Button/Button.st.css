@@ -4,6 +4,11 @@
 }
 
 :import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
+:import {
   -st-from: '../Foundation/stylable/colors.st.css';
   -st-named: B10, F00, B20,  R10, R20, P10, P20, G10, G20, D80, B50, D40,
   D10, D20, B40, F00, D10-20, D20-48, D20-54, D20-60, D80-30, D80-70, D10-30,
@@ -31,7 +36,7 @@
 
   outline: none;
   transition-duration: 100ms;
-  transition-timing-function: linear;
+  transition-timing-function: value(ease-9);
   transition-property: background-color, color, border-color;
 
   height: 36px;

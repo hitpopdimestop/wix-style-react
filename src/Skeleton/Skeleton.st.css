@@ -3,6 +3,11 @@
   -st-named: D80, D60;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-9;
+}
+
 .line {
   -st-states: alignment(enum(start, middle)),
     spacing(enum(small, medium, large));
@@ -27,7 +32,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  animation: moveRight 1s linear infinite;
+  animation: moveRight 1s value(ease-9) infinite;
   transform: translateX(-100%);
   content: ' ';
 }

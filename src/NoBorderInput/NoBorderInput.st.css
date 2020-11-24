@@ -27,6 +27,11 @@
   align-items: center;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-8;
+}
+
 .root input {
   -st-mixin: placeholderMixin(value(D55));
   opacity: 0;
@@ -34,7 +39,7 @@
 
 .label {
   -st-extends: Text;
-  transition:all .2s ease-in-out;
+  transition: all .2s value(ease-8);
   position: absolute;
   top: 6px;
   padding: 0;
@@ -137,7 +142,7 @@
 .root:hasValue input,
 .root:noLabel input {
   border-bottom: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity .3s value(ease-8);
   opacity: 1;
 }
 
