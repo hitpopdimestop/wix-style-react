@@ -5,29 +5,12 @@ import colors from '../colors.scss';
 import { st, classes } from './Box.st.css';
 import { filterObject } from '../utils/filterObject';
 import { spacingUnit, spacingTokens } from '../spacing';
-
-const directions = {
-  horizontal: 'horizontal',
-  vertical: 'vertical',
-};
-const horizontalAlignmentValues = {
-  left: 'left',
-  center: 'center',
-  right: 'right',
-  'space-between': 'space-between',
-};
-const verticalAlignmentValues = {
-  top: 'top',
-  middle: 'middle',
-  bottom: 'bottom',
-  'space-between': 'space-between',
-};
-const spacingValues = {
-  tiny: `${spacingUnit}px`,
-  small: `${spacingUnit * 2}px`,
-  medium: `${spacingUnit * 3}px`,
-  large: `${spacingUnit * 4}px`,
-};
+import {
+  directions,
+  horizontalAlignmentValues,
+  spacingValues,
+  verticalAlignmentValues,
+} from './constants';
 
 /** In case the value is a number, it's multiplied by the defined spacing unit.
  *  Otherwise - there are three options:
@@ -110,8 +93,6 @@ const Box = ({
     classes.root,
     {
       inline,
-
-      // Alignment
       direction,
       alignItems: align,
       justifyContent: verticalAlign,
