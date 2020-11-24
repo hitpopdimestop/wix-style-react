@@ -3,6 +3,11 @@
   -st-named: D20, D40, R10;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-5, ease-6;
+}
+
 .baseIcon {
   box-sizing: border-box;
   width: 18px;
@@ -45,11 +50,11 @@
 @keyframes bounce {
   50% {
     transform: scale(1.66);
-    animation-timing-function: cubic-bezier(0.81, 0, 1, 1);
+    animation-timing-function: value(ease-5);
   }
 
   100% {
     transform: scale(1);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-timing-function: value(ease-6);
   }
 }

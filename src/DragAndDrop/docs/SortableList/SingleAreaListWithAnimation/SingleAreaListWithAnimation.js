@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
+import { stVars } from '../../../../Foundation/stylable/easing.st.css';
 import { dndStyles as defaultDndStyles, SortableList } from 'wix-style-react';
-
 import styles from './SingleAreaListWithAnimation.scss';
 
 const generateId = () => Math.floor(Math.random() * 100000);
@@ -90,7 +89,7 @@ export default class SingleAreaListWithAnimation extends React.Component {
           renderItem={this.renderItem}
           onDrop={this.handleDrop}
           animationDuration={500}
-          animationTiming="cubic-bezier(0.19, 1, 0.22, 1)"
+          animationTiming={stVars['ease-8']}
         />
       </div>
     );

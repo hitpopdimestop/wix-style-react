@@ -6,6 +6,7 @@ import {
   DragDropContextProvider,
 } from 'wix-style-react';
 import styles from './MultiAreaListWithSortableColumnsWithAnimations.scss';
+import { stVars } from '../../../../Foundation/stylable/easing.st.css';
 
 const generateStateForContainer = (length, startIndex) => {
   const res = [];
@@ -120,7 +121,7 @@ export default class MultiAreaListWithSortableColumnsWithAnimations extends Reac
           renderItem={this.renderCell}
           onDrop={this.handleDropCell}
           animationDuration={500}
-          animationTiming="cubic-bezier(0.19, 1, 0.22, 1)"
+          animationTiming={stVars['ease-8']}
         />
       </div>
     );
@@ -139,7 +140,7 @@ export default class MultiAreaListWithSortableColumnsWithAnimations extends Reac
             renderItem={this.renderColumn}
             onDrop={this.handleDropColumn}
             animationDuration={500}
-            animationTiming="cubic-bezier(0.19, 1, 0.22, 1)"
+            animationTiming={stVars['ease-8']}
           />
         </div>
       </DragDropContextProvider>

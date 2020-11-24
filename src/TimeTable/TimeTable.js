@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AddSmallIcon from 'wix-ui-icons-common/AddSmall';
 import cloneDeep from 'lodash/cloneDeep';
 import uniqueId from 'lodash/uniqueId';
-
+import { stVars } from '../Foundation/stylable/easing.st.css';
 import { DataHook, DataAttribute } from './constants';
 import { st, classes } from './TimeTable.st.css';
 import SortableList from '../SortableList';
@@ -185,7 +185,7 @@ class TimeTable extends React.PureComponent {
                     renderItem={this._renderItem}
                     insertPosition={insertPosition}
                     animationDuration={500}
-                    animationTiming="cubic-bezier(0.19, 1, 0.22, 1)"
+                    animationTiming={stVars['ease-8']}
                   />
                   {addItemVisible && this._renderAddItemButton(columnIndex)}
                 </div>

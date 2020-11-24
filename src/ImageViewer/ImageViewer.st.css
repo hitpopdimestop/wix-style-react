@@ -9,6 +9,11 @@
 }
 
 :import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: ease-7;
+}
+
+:import {
   -st-from: "wix-ui-core/dist/src/hocs/Focusable/Focusable.st.css";
   -st-default: Focusable;
 }
@@ -121,7 +126,7 @@
   width: 100%;
   object-fit: cover;
   transform: scale(1);
-  transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition: transform 0.2s value(ease-7);
 }
 
 .image.imageVisible {
