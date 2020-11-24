@@ -19,13 +19,13 @@ import {
  *   3. Space-separated values that are represented by a string (for example: "3px 3px")
  * */
 const formatSingleSpacingValue = value => {
-  if (typeof value !== 'undefined') {
+  if (value !== undefined) {
     return formatSpacingValue(value);
   }
 };
 
 const formatComplexSpacingValue = value => {
-  if (typeof value !== 'undefined') {
+  if (value !== undefined) {
     return value
       .toString()
       .split(' ')
