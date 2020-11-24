@@ -4,7 +4,7 @@ export const closeButton = `
     <ModalMobileLayout
           title={<Text weight="bold">Enter VAT ID</Text>}
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -24,7 +24,7 @@ export const closeButton = `
     <ModalMobileLayout
       title={<Text weight="bold">Enter VAT ID</Text>}
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -46,7 +46,7 @@ export const title = `
     <ModalMobileLayout
           title={<Text weight="bold">Enter VAT ID</Text>}
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -64,7 +64,7 @@ export const title = `
   <Cell>
     <ModalMobileLayout
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -86,7 +86,7 @@ export const stickyTitle = `
 <div style={{height: '185px'}}>
     <ModalMobileLayout
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -101,7 +101,7 @@ export const stickyTitle = `
 <div style={{height: '185px'}}>
     <ModalMobileLayout
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -119,7 +119,7 @@ export const footer = `
     <ModalMobileLayout
           title={<Text weight="bold">Enter VAT ID</Text>}
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -138,7 +138,7 @@ export const footer = `
     <ModalMobileLayout
               title={<Text weight="bold">Enter VAT ID</Text>}
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -154,7 +154,7 @@ export const stickyFooter = `
 <div style={{height: '185px'}}>
     <ModalMobileLayout
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
@@ -173,7 +173,7 @@ export const stickyFooter = `
 <div style={{height: '185px'}}>
     <ModalMobileLayout
       content={
-        <Text weight="normal" secondary>
+        <Text weight="thin" secondary>
           Enter a valid European Union VAT identification number for the
           ‘Reverse Charge’ mechanism in order to apply.
         </Text>
