@@ -5,6 +5,7 @@ import Input from '../Input/Input';
 import { st, classes } from './NoBorderInput.st.css';
 import Text from '../Text';
 import dataHooks from './dataHooks';
+import { FontUpgradeContext } from '../FontUpgrade/context';
 
 class NoBorderInput extends React.Component {
   static StatusError = Input.StatusError;
@@ -61,56 +62,60 @@ class NoBorderInput extends React.Component {
       );
 
     return (
-      <div
-        className={st(
-          classes.root,
-          {
-            size,
-            focus: this.state.focus,
-            hasValue,
-            noLabel: !label,
-            status,
-            disabled,
-          },
-          className,
+      <FontUpgradeContext.Consumer>
+        {({ active: isMadefor }) => (
+          <div
+            className={st(
+              classes.root,
+              {
+                size,
+                focus: this.state.focus,
+                hasValue,
+                noLabel: !label,
+                status,
+                disabled,
+              },
+              className,
+            )}
+            data-hook={dataHook}
+            data-status={status}
+          >
+            <Text
+              tagName="label"
+              dataHook={dataHooks.label}
+              className={classes.label}
+              htmlFor={id}
+              size="medium"
+              weight={isMadefor ? 'thin' : 'normal'}
+              light
+              secondary
+              ellipsis
+              showTooltip={false}
+              skin={disabled ? 'disabled' : 'standard'}
+            >
+              {label}
+            </Text>
+            <Input
+              {...wsrInputProps}
+              ref={wsrInput => (this.wsrInput = wsrInput)}
+              onFocus={e => {
+                this.setState({ focus: true });
+                if (typeof onFocus === 'function') {
+                  onFocus(e);
+                }
+              }}
+              onBlur={e => {
+                this.setState({ focus: false });
+                if (typeof onBlur === 'function') {
+                  onBlur(e);
+                }
+              }}
+            />
+            <div className={classes.border} />
+            {renderStatusLine()}
+          </div>
         )}
-        data-hook={dataHook}
-        data-status={status}
-      >
-        <Text
-          tagName="label"
-          dataHook={dataHooks.label}
-          className={classes.label}
-          htmlFor={id}
-          size="medium"
-          weight="thin"
-          light
-          secondary
-          ellipsis
-          showTooltip={false}
-          skin={disabled ? 'disabled' : 'standard'}
-        >
-          {label}
-        </Text>
-        <Input
-          {...wsrInputProps}
-          ref={wsrInput => (this.wsrInput = wsrInput)}
-          onFocus={e => {
-            this.setState({ focus: true });
-            if (typeof onFocus === 'function') {
-              onFocus(e);
-            }
-          }}
-          onBlur={e => {
-            this.setState({ focus: false });
-            if (typeof onBlur === 'function') {
-              onBlur(e);
-            }
-          }}
-        />
-        <div className={classes.border} />
-        {renderStatusLine()}
-      </div>
+      </FontUpgradeContext.Consumer>
     );
   }
 }
