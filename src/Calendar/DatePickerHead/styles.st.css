@@ -3,6 +3,10 @@
   -st-named: THEME-COLOR-10, THEME-COLOR-40, THEME-COLOR-50, D80;
 }
 
+:import {
+  -st-from: '../../Foundation/stylable/easing.st.css';
+  -st-named: speed-fast-1;
+}
 
 .root {
   display: flex;
@@ -25,7 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 100ms;
+  transition: background-color value(speed-fast-1);
   border-radius: 50%;
 }
 

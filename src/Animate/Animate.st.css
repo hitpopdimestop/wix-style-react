@@ -3,10 +3,14 @@
   -st-default: calc;
 }
 
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: speed-medium-2;
+}
+
 :vars{
-  duration: 300ms;
   iterationDely: 700ms;
-  loopDuration: calc(value(duration) + value(iterationDely))
+  loopDuration: calc(value(speed-medium-2) + value(iterationDely))
 }
 
 @keyframes easeOutElasticSmall {
@@ -80,16 +84,16 @@
   -st-states: active, loop, size(enum(small,medium));
 }
 
-.root:active:size(small){
-  animation: easeOutElasticSmall value(duration);
+.root:active:size(small) {
+  animation: easeOutElasticSmall value(speed-medium-2);
 }
 
 .root:active:size(small):loop {
   animation: easeOutElasticSmallLoop value(loopDuration) infinite;
 }
 
-.root:active:size(medium){
-  animation: easeOutElasticMedium value(duration);
+.root:active:size(medium) {
+  animation: easeOutElasticMedium value(speed-medium-2);
 }
 
 .root:active:size(medium):loop {

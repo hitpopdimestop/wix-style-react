@@ -1,3 +1,8 @@
+:import {
+  -st-from: '../Foundation/stylable/easing.st.css';
+  -st-named: speed-slow-2;
+}
+
 .collapse {
-  transition: height 500ms;
+  transition: height value(speed-slow-2);
 }

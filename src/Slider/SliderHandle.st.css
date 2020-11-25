@@ -27,7 +27,6 @@
   touch-action: pan-x;
   cursor: pointer;
   outline: none;
-  /*transition: transform 80ms, left 80ms;*/
   width: value(clickableAreaSize);
   height: value(clickableAreaSize);
   transform: translate(-6px, -6px);

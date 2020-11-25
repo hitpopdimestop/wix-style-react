@@ -1,10 +1,10 @@
 :vars {
-  speed-fast-1: 100;
-  speed-fast-2: 150;
-  speed-medium-1: 200;
-  speed-medium-2: 300;
-  speed-slow-1: 400;
-  speed-slow-2: 500;
+  speed-fast-1: 100ms;
+  speed-fast-2: 150ms;
+  speed-medium-1: 200ms;
+  speed-medium-2: 300ms;
+  speed-slow-1: 400ms;
+  speed-slow-2: 500ms;
 }
 
 :vars {

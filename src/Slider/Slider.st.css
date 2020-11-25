@@ -67,7 +67,6 @@
   height: value(sliderRailHeight);
   border-radius: 10px;
   margin: value(sliderPadding) 0;
-  /*//transition: width 80ms;  Animation */
 }
 
 :global(.wsr-slider-mark) {

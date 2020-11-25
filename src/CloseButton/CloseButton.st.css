@@ -15,7 +15,7 @@
 
 :import {
   -st-from: '../Foundation/stylable/easing.st.css';
-  -st-named: ease-9;
+  -st-named: ease-9, speed-fast-1;
 }
 
 .root {
@@ -32,7 +32,7 @@
   border: none;
   outline: none;
 
-  transition-duration: 100ms;
+  transition-duration: value(speed-fast-1);
   transition-timing-function: value(ease-9);
   transition-property: background-color, color, border-color;
 
