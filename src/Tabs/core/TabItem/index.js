@@ -4,6 +4,7 @@ import pick from '../../../utils/operators/pick';
 import Text from '../../../Text';
 import * as TabPropTypes from '../constants/tab-prop-types';
 import { classes, st } from '../../Tabs.st.css';
+import { FontUpgradeContext } from '../../../FontUpgrade/context';
 
 class TabItem extends React.Component {
   getItemStyle() {
@@ -38,9 +39,18 @@ class TabItem extends React.Component {
         {...containerProps}
         ref={this.createRef}
       >
-        <Text size={size} className={classes.tabText} weight="thin" ellipsis>
-          {item.title}
-        </Text>
+        <FontUpgradeContext.Consumer>
+          {({ active: isMadefor }) => (
+            <Text
+              size={size}
+              className={classes.tabText}
+              weight={isMadefor ? 'thin' : 'normal'}
+              ellipsis
+            >
+              {item.title}
+            </Text>
+          )}
+        </FontUpgradeContext.Consumer>
       </li>
     );
   }
