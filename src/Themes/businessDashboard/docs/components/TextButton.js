@@ -1,6 +1,6 @@
 export const playground = `
 <div>
-  <ThemeProvider theme={theme()}> 
+  <ThemeProvider theme={theme()}>
     <Box padding="3px">
       <TextButton size="tiny">Standard thin</TextButton>
     </Box>
@@ -53,6 +53,15 @@ export const playground = `
     </Box>
     <Box padding="3px">
       <TextButton size="tiny" underline="always">With underline</TextButton>
+    </Box>
+    <Box padding="3px">
+      <TextButton size="tiny" skin="premium">Premium thin</TextButton>
+    </Box>
+    <Box padding="3px">
+      <TextButton size="tiny" weight="normal" skin="premium">Premium normal</TextButton>
+    </Box>
+    <Box padding="3px">
+      <TextButton size="tiny" disabled skin="premium">Premium disabled</TextButton>
     </Box>
   </ThemeProvider>
 </div>

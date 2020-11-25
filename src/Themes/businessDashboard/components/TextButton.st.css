@@ -15,8 +15,6 @@
 
 .root {
   -st-extends: TextButton;
-  color: value(B10);
-  align-items: flex-start;
 }
 
 .root:hover {
