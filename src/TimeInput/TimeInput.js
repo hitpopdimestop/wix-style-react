@@ -7,6 +7,7 @@ import Input from '../Input';
 import Box from '../Box';
 import { st, classes } from './TimeInput.st.css';
 import { dataHooks } from './constants';
+import { FontUpgradeContext } from '../FontUpgrade/context';
 
 /**
  * An uncontrolled time input component with a stepper and am/pm support
@@ -257,7 +258,7 @@ export default class TimeInput extends Component {
     this._updateDate({ time: target.value });
   };
 
-  _renderTimeTextbox() {
+  _renderTimeTextbox({ isMadefor }) {
     const {
       customSuffix,
       disabled,
@@ -276,7 +277,7 @@ export default class TimeInput extends Component {
           <Box verticalAlign="middle" flexGrow={0} marginRight="6px">
             {this.state.ampmMode && (
               <Text
-                weight="thin"
+                weight={isMadefor ? 'thin' : 'normal'}
                 skin={disabled ? 'disabled' : 'standard'}
                 className={classes.ampm}
                 onClick={this._handleAmPmClick}
@@ -295,7 +296,7 @@ export default class TimeInput extends Component {
               <Box marginRight="6px" width="max-content">
                 {typeof customSuffix === 'string' ? (
                   <Text
-                    weight="thin"
+                    weight={isMadefor ? 'thin' : 'normal'}
                     light
                     secondary
                     dataHook={dataHooks.customSuffix}
@@ -351,27 +352,35 @@ export default class TimeInput extends Component {
     const { focus, hover } = this.state;
 
     return (
-      <div
-        className={st(classes.root, { disabled, rtl, showSeconds }, className)}
-        style={style}
-        data-hook={dataHook}
-      >
-        <div
-          onMouseOver={() => this._handleHover(true)}
-          onMouseOut={() => this._handleHover(false)}
-          className={st(
-            classes.time,
-            {
-              focus,
-              hover: hover && !focus,
-              stretch: width === '100%',
-            },
-            className,
-          )}
-        >
-          {this._renderTimeTextbox()}
-        </div>
-      </div>
+      <FontUpgradeContext.Consumer>
+        {({ active: isMadefor }) => (
+          <div
+            className={st(
+              classes.root,
+              { disabled, rtl, showSeconds },
+              className,
+            )}
+            style={style}
+            data-hook={dataHook}
+          >
+            <div
+              onMouseOver={() => this._handleHover(true)}
+              onMouseOut={() => this._handleHover(false)}
+              className={st(
+                classes.time,
+                {
+                  focus,
+                  hover: hover && !focus,
+                  stretch: width === '100%',
+                },
+                className,
+              )}
+            >
+              {this._renderTimeTextbox({ isMadefor })}
+            </div>
+          </div>
+        )}
+      </FontUpgradeContext.Consumer>
     );
   }
 }
