@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { FontUpgradeContext } from '../FontUpgrade/context';
 import { st, classes } from './StarsRatingBar.st.css';
 import {
   dataHooks,
@@ -139,7 +139,7 @@ class StarsRatingBar extends React.PureComponent {
     return shouldShowRateCaption;
   };
 
-  _renderRateCaption = () => {
+  _renderRateCaption = ({ isMadefor }) => {
     const { descriptionValues, value } = this.props;
     const { hoveredStarIndex } = this.state;
     const isStarsHovered = hoveredStarIndex !== 0;
@@ -160,7 +160,7 @@ class StarsRatingBar extends React.PureComponent {
           dataHook={dataHooks.ratingCaption}
           ellipsis
           size="small"
-          weight="normal"
+          weight={isMadefor ? 'normal' : 'bold'}
           secondary
         >
           {rateCaptionCurrentLabel}
@@ -173,10 +173,16 @@ class StarsRatingBar extends React.PureComponent {
     const { dataHook, className } = this.props;
 
     return (
-      <div data-hook={dataHook} className={st(classes.root, className)}>
-        <div className={classes.starsContainer}>{this._renderStars()}</div>
-        {this._shouldShowRateCaption() ? this._renderRateCaption() : null}
-      </div>
+      <FontUpgradeContext.Consumer>
+        {({ active: isMadefor }) => (
+          <div data-hook={dataHook} className={st(classes.root, className)}>
+            <div className={classes.starsContainer}>{this._renderStars()}</div>
+            {this._shouldShowRateCaption()
+              ? this._renderRateCaption({ isMadefor })
+              : null}
+          </div>
+        )}
+      </FontUpgradeContext.Consumer>
     );
   }
 }
