@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
+import { FontUpgradeContext } from '../FontUpgrade/context';
 import { st, classes } from './ListItemAction.st.css';
 import Text from '../Text';
 import Box from '../Box';
@@ -60,7 +61,7 @@ class ListItemActionComponent extends React.PureComponent {
     }
   }
 
-  _renderText = () => {
+  _renderText = ({ isMadefor }) => {
     const {
       title,
       size,
@@ -77,7 +78,7 @@ class ListItemActionComponent extends React.PureComponent {
           dataHook="list-item-action-title"
           size={size}
           ellipsis={ellipsis}
-          weight="thin"
+          weight={isMadefor ? 'thin' : 'normal'}
           placement="right"
           skin={disabled ? 'disabled' : 'standard'}
           {...tooltipModifiers}
@@ -91,7 +92,7 @@ class ListItemActionComponent extends React.PureComponent {
             secondary
             size="small"
             ellipsis={ellipsis}
-            weight="thin"
+            weight={isMadefor ? 'thin' : 'normal'}
             placement="right"
             skin={disabled ? 'disabled' : 'standard'}
             light={!disabled}
@@ -142,28 +143,32 @@ class ListItemActionComponent extends React.PureComponent {
     const { selected, hovered, ellipsis, ...rest } = others;
 
     return (
-      <Component
-        {...rest}
-        className={st(
-          classes.root,
-          { skin, disabled, highlighted, ellipsis },
-          className,
+      <FontUpgradeContext.Consumer>
+        {({ active }) => (
+          <Component
+            {...rest}
+            className={st(
+              classes.root,
+              { skin, disabled, highlighted, ellipsis },
+              className,
+            )}
+            data-skin={skin}
+            data-disabled={disabled}
+            tabIndex={tabIndex}
+            ref={ref => (this.innerComponentRef = ref)}
+            autoFocus={autoFocus}
+            onFocus={focusableOnFocus}
+            onBlur={focusableOnBlur}
+            type={Component === 'button' ? 'button' : undefined}
+            data-hook={dataHook}
+            onKeyDown={!disabled ? onKeyDown : undefined}
+            onClick={!disabled ? onClick : undefined}
+          >
+            {prefixIcon && this._renderPrefix()}
+            {this._renderText({ isMadefor: active })}
+          </Component>
         )}
-        data-skin={skin}
-        data-disabled={disabled}
-        tabIndex={tabIndex}
-        ref={ref => (this.innerComponentRef = ref)}
-        autoFocus={autoFocus}
-        onFocus={focusableOnFocus}
-        onBlur={focusableOnBlur}
-        type={Component === 'button' ? 'button' : undefined}
-        data-hook={dataHook}
-        onKeyDown={!disabled ? onKeyDown : undefined}
-        onClick={!disabled ? onClick : undefined}
-      >
-        {prefixIcon && this._renderPrefix()}
-        {this._renderText()}
-      </Component>
+      </FontUpgradeContext.Consumer>
     );
   }
 }
