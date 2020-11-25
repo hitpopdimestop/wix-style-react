@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { FontUpgradeContext } from '../FontUpgrade/context';
 import Text from '../Text';
 import { classes, st } from './TimelineItem.st.css';
 import { dataHooks } from './constants';
@@ -14,61 +14,69 @@ class TimelineItem extends React.PureComponent {
 
     return (
       <li className={classes.event} data-hook={dataHook}>
-        <div className={classes.prefix}>
-          {item.customPrefix ? (
-            <div data-hook={`${dataHooks.timelineBulletIndicator}-${idx}`}>
-              {item.customPrefix}
-            </div>
-          ) : (
-            <div
-              data-hook={`${dataHooks.timelineDefaultPrefix}-${idx}`}
-              className={classes.defaultIndicator}
-            />
+        <FontUpgradeContext.Consumer>
+          {({ active: isMadefor }) => (
+            <>
+              <div className={classes.prefix}>
+                {item.customPrefix ? (
+                  <div
+                    data-hook={`${dataHooks.timelineBulletIndicator}-${idx}`}
+                  >
+                    {item.customPrefix}
+                  </div>
+                ) : (
+                  <div
+                    data-hook={`${dataHooks.timelineDefaultPrefix}-${idx}`}
+                    className={classes.defaultIndicator}
+                  />
+                )}
+                <div className={classes.line} />
+              </div>
+              <div className={st(classes.label, { withSuffix: !!item.suffix })}>
+                {isString(item.label) ? (
+                  <Text
+                    dataHook={`${dataHooks.timelineLabel}-${idx}`}
+                    weight={isMadefor ? 'thin' : 'normal'}
+                    size="small"
+                    className={classes.labelText}
+                  >
+                    {item.label}
+                  </Text>
+                ) : (
+                  item.label
+                )}
+                {item.labelAction ? (
+                  <div
+                    className={classes.labelAction}
+                    data-hook={`${dataHooks.timelineLabelAction}-${idx}`}
+                  >
+                    {item.labelAction}
+                  </div>
+                ) : null}
+              </div>
+              {item.suffix ? (
+                <div
+                  className={classes.suffix}
+                  data-hook={`${dataHooks.timelineSuffix}-${idx}`}
+                >
+                  {isString(item.suffix) ? (
+                    <Text
+                      dataHook={`${dataHooks.timelineTextSuffix}-${idx}`}
+                      weight={isMadefor ? 'thin' : 'normal'}
+                      light
+                      secondary
+                      size="small"
+                    >
+                      {item.suffix}
+                    </Text>
+                  ) : (
+                    item.suffix
+                  )}
+                </div>
+              ) : null}
+            </>
           )}
-          <div className={classes.line} />
-        </div>
-        <div className={st(classes.label, { withSuffix: !!item.suffix })}>
-          {isString(item.label) ? (
-            <Text
-              dataHook={`${dataHooks.timelineLabel}-${idx}`}
-              weight="thin"
-              size="small"
-              className={classes.labelText}
-            >
-              {item.label}
-            </Text>
-          ) : (
-            item.label
-          )}
-          {item.labelAction ? (
-            <div
-              className={classes.labelAction}
-              data-hook={`${dataHooks.timelineLabelAction}-${idx}`}
-            >
-              {item.labelAction}
-            </div>
-          ) : null}
-        </div>
-        {item.suffix ? (
-          <div
-            className={classes.suffix}
-            data-hook={`${dataHooks.timelineSuffix}-${idx}`}
-          >
-            {isString(item.suffix) ? (
-              <Text
-                dataHook={`${dataHooks.timelineTextSuffix}-${idx}`}
-                weight="thin"
-                light
-                secondary
-                size="small"
-              >
-                {item.suffix}
-              </Text>
-            ) : (
-              item.suffix
-            )}
-          </div>
-        ) : null}
+        </FontUpgradeContext.Consumer>
       </li>
     );
   }
