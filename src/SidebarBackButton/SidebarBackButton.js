@@ -8,6 +8,7 @@ import { SidebarContext } from '../Sidebar/SidebarAPI';
 import { sidebarSkins } from '../Sidebar/constants';
 
 import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable';
+import { FontUpgradeContext } from '../FontUpgrade/context';
 
 /**  button with an animated back arrow */
 class SidebarBackButton extends React.PureComponent {
@@ -64,14 +65,18 @@ class SidebarBackButton extends React.PureComponent {
               <ChevronLeft
                 className={st(classes.arrow, { animated: animateArrow })}
               />
-              <Text
-                weight="normal"
-                size="small"
-                secondary={skin === sidebarSkins.light}
-                light={skin === sidebarSkins.dark}
-              >
-                {children}
-              </Text>
+              <FontUpgradeContext.Consumer>
+                {({ active: isMadefor }) => (
+                  <Text
+                    weight={isMadefor ? 'normal' : 'bold'}
+                    size="small"
+                    secondary={skin === sidebarSkins.light}
+                    light={skin === sidebarSkins.dark}
+                  >
+                    {children}
+                  </Text>
+                )}
+              </FontUpgradeContext.Consumer>
             </button>
           );
         }}
