@@ -109,6 +109,7 @@
 
 .root:showEdgesGradient :global(.slick-list:before) {
   left: 0;
+  background: linear-gradient(to left, rgba(240, 244, 247, 0) 50%, value(D70));
   background: linear-gradient(to left, rgba(240, 244, 247, 0) 50%, var(--edgesGradientColor, value(D70)));
 }
 
